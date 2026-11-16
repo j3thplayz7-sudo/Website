@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovate - The Future of Industry</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                <img src="images/logo.jpg" alt="Website Logo">
+                <span>Innovate</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="industry_future.html">The Future of Industry</a>
+                <a href="innovation.html">Innovation</a>
+                <a href="infrastructure.html">Infrastructure</a>
+                <a href="be_apart.html">Be Apart</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+
+        <section class="future-hero">
+
+            <div class="future-content">
+
+                <p class="future-label">INDUSTRY 4.0 & BEYOND</p>
+
+                <h1>
+                    A new era of industry
+                    begins with innovation.
+                </h1>
+
+            </div>
+
+            <div class="future-image">
+                <img src="images/robot-crane.jpg"
+                     alt="Robotic crane lifting a box in a modern factory">
+            </div>
+
+        </section>
+
+        <!-- Key Innovations -->
+        <section class="innovations">
+
+            <h2>Key Innovations</h2>
+
+            <p class="innovation-subtitle">
+                Discover how technology is creating a greener future.
+                Click on a card to reveal a fun fact!
+            </p>
+
+            <div class="card-container">
+
+                <!-- Card 1 -->
+                <div class="flip-card" onclick="flipCard(this)">
+
+                    <div class="flip-card-inner">
+
+                        <div class="card-front">
+                            <div class="card-icon">☀️</div>
+                            <h3>Solar Energy</h3>
+                            <p>Click to discover more →</p>
+                        </div>
+
+                        <div class="card-back">
+                            <h3>☀️ Fun Fact!</h3>
+                            <p>
+                                Factories can install solar panels
+                                on their rooftops to generate clean
+                                electricity and reduce their reliance
+                                on fossil fuels.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="flip-card" onclick="flipCard(this)">
+
+                    <div class="flip-card-inner">
+
+                        <div class="card-front">
+                            <div class="card-icon">🤖</div>
+                            <h3>Smart Robotics</h3>
+                            <p>Click to discover more →</p>
+                        </div>
+
+                        <div class="card-back">
+                            <h3>🤖 Fun Fact!</h3>
+                            <p>
+                                Smart robots can perform repetitive
+                                tasks with great precision, helping
+                                factories reduce mistakes and material
+                                waste.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="flip-card" onclick="flipCard(this)">
+
+                    <div class="flip-card-inner">
+
+                        <div class="card-front">
+                            <div class="card-icon">🌱</div>
+                            <h3>Green Manufacturing</h3>
+                            <p>Click to discover more →</p>
+                        </div>
+
+                        <div class="card-back">
+                            <h3>🌱 Fun Fact!</h3>
+                            <p>
+                                Recycling materials such as metal
+                                and plastic allows industries to
+                                reuse resources instead of constantly
+                                extracting new raw materials.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="flip-card" onclick="flipCard(this)">
+
+                    <div class="flip-card-inner">
+
+                        <div class="card-front">
+                            <div class="card-icon">⚡</div>
+                            <h3>Energy Efficiency</h3>
+                            <p>Click to discover more →</p>
+                        </div>
+
+                        <div class="card-back">
+                            <h3>⚡ Fun Fact!</h3>
+                            <p>
+                                Energy-efficient motors and machines
+                                use less electricity to complete
+                                industrial tasks, reducing energy
+                                costs and emissions.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Card Flip JavaScript -->
+    <script>
+
+        function flipCard(card) {
+            card.classList.toggle("flipped");
+        }
+
+    </script>
+
+</body>
+</html>

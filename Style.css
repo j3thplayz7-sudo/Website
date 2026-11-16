@@ -169,3 +169,218 @@ body {
 
 }
 
+
+/* FUTURE OF INDUSTRY HERO */
+
+.future-hero {
+    min-height: 65vh;
+    background: linear-gradient(135deg, #fff7ed, #ffdfbd);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 60px 5%;
+    gap: 40px;
+}
+
+.future-content {
+    flex: 1;
+}
+
+.future-label {
+    color: #d96b13;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.future-content h1 {
+    color: #e87518;
+    font-size: clamp(38px, 5vw, 70px);
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.future-image {
+    flex: 1;
+}
+
+.future-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+
+/* KEY INNOVATIONS SECTION */
+
+.innovations {
+    background-color: #fffaf4;
+    padding: 65px 5%;
+    text-align: center;
+}
+
+.innovations h2 {
+    color: #e87518;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.innovation-subtitle {
+    color: #666;
+    font-size: 17px;
+    margin-bottom: 45px;
+}
+
+
+/* CARD LAYOUT */
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+
+/* FLIP CARDS */
+
+.flip-card {
+    background-color: transparent;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* FRONT AND BACK */
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    border-radius: 18px;
+    border: 2px solid #f58220;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+}
+
+
+/* FRONT DESIGN */
+
+.card-front {
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #ffe4c9
+    );
+
+    color: #333;
+}
+
+.card-icon {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.card-front h3 {
+    color: #e87518;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.card-front p {
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* BACK DESIGN */
+
+.card-back {
+    background: linear-gradient(
+        145deg,
+        #f58220,
+        #d96b13
+    );
+
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.card-back h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.card-back p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* HOVER EFFECT */
+
+.flip-card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 1000px) {
+
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .future-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .future-image {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .innovations h2 {
+        font-size: 32px;
+    }
+
+}
+
