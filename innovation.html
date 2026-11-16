@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovate - Innovation</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                <img src="images/logo.jpg" alt="Website Logo">
+                <span>Innovate</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="industry_future.html">The Future of Industry</a>
+                <a href="innovation.html">Innovation</a>
+                <a href="infrastructure.html">Infrastructure</a>
+                <a href="be_apart.html">Be Apart</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="innovation-hero">
+
+            <div class="innovation-content">
+
+                <p class="innovation-label">
+                    DISCOVER THE POWER OF IDEAS
+                </p>
+
+                <h1>
+                    Innovation For A Better Tomorrow
+                </h1>
+
+                <p class="innovation-description">
+                    Explore groundbreaking technologies
+                    that are shaping our future.
+                </p>
+
+                <button class="quiz-button" onclick="startQuiz()">
+                    Try the Innovation Quiz →
+                </button>
+
+            </div>
+
+            <!-- Network Lightbulb Illustration -->
+            <div class="innovation-image">
+
+                <svg viewBox="0 0 500 400"
+                     xmlns="http://www.w3.org/2000/svg">
+
+                    <!-- Connecting Lines -->
+                    <g stroke="#f58220" stroke-width="2"
+                       opacity="0.7">
+
+                        <line x1="50" y1="80" x2="190" y2="120"/>
+                        <line x1="190" y1="120" x2="300" y2="60"/>
+                        <line x1="300" y1="60" x2="440" y2="120"/>
+                        <line x1="50" y1="250" x2="180" y2="210"/>
+                        <line x1="180" y1="210" x2="310" y2="300"/>
+                        <line x1="310" y1="300" x2="450" y2="250"/>
+                        <line x1="190" y1="120" x2="180" y2="210"/>
+                        <line x1="300" y1="60" x2="310" y2="300"/>
+                        <line x1="440" y1="120" x2="450" y2="250"/>
+
+                    </g>
+
+                    <!-- Network Dots -->
+                    <g fill="#ff9d32">
+
+                        <circle cx="50" cy="80" r="7"/>
+                        <circle cx="190" cy="120" r="7"/>
+                        <circle cx="300" cy="60" r="7"/>
+                        <circle cx="440" cy="120" r="7"/>
+                        <circle cx="50" cy="250" r="7"/>
+                        <circle cx="180" cy="210" r="7"/>
+                        <circle cx="310" cy="300" r="7"/>
+                        <circle cx="450" cy="250" r="7"/>
+
+                    </g>
+
+                    <!-- Lightbulb -->
+                    <g stroke="#e87518"
+                       stroke-width="9"
+                       fill="#fff0d9"
+                       stroke-linejoin="round">
+
+                        <path d="M250 85
+                                 C180 85 145 140 160 200
+                                 C170 235 195 250 205 280
+                                 L295 280
+                                 C305 250 330 235 340 200
+                                 C355 140 320 85 250 85Z"/>
+
+                        <path d="M205 280 L295 280"/>
+                        <path d="M215 300 L285 300"/>
+                        <path d="M220 320 L280 320"/>
+                        <path d="M230 340 L270 340"/>
+
+                    </g>
+
+                    <!-- Bulb Filament -->
+                    <path d="M225 210 L250 245 L275 210"
+                          stroke="#f58220"
+                          stroke-width="8"
+                          fill="none"/>
+
+                    <path d="M250 245 L250 275"
+                          stroke="#f58220"
+                          stroke-width="8"/>
+
+                </svg>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUIZ SECTION -->
+        <section class="quiz-section" id="quiz">
+
+            <h2>Innovation Quiz</h2>
+
+            <p>Test your knowledge with 10 easy questions!</p>
+
+            <div class="quiz-box" id="quiz-box">
+
+                <h3 id="question">Your question will appear here.</h3>
+
+                <div id="answer-buttons"></div>
+
+                <p id="quiz-feedback"></p>
+
+                <button id="next-button"
+                        onclick="nextQuestion()"
+                        style="display:none;">
+                    Next Question →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- DID YOU KNOW SECTION -->
+        <section class="facts-section">
+
+            <h2>Did You Know?</h2>
+
+            <p class="facts-subtitle">
+                Discover amazing facts about technology,
+                innovation and sustainability.
+            </p>
+
+            <div class="facts-carousel">
+
+                <button class="arrow-button"
+                        onclick="moveFacts(-1)">
+                    &#10094;
+                </button>
+
+                <div class="facts-container" id="facts-container">
+                    <!-- Cards added using JavaScript -->
+                </div>
+
+                <button class="arrow-button"
+                        onclick="moveFacts(1)">
+                    &#10095;
+                </button>
+
+            </div>
+
+            <p class="facts-instruction">
+                Use the arrows to discover more facts!
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="innovation.js"></script>
+
+</body>
+</html>

@@ -384,3 +384,362 @@ body {
 
 }
 
+
+
+
+/* ============================= */
+/* INNOVATION HERO SECTION */
+/* ============================= */
+
+.innovation-hero {
+    min-height: 65vh;
+    background: linear-gradient(135deg, #fff7ed, #ffdfbd);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 60px 5%;
+    gap: 40px;
+}
+
+.innovation-content {
+    flex: 1;
+}
+
+.innovation-label {
+    color: #d96b13;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.innovation-content h1 {
+    color: #e87518;
+    font-size: clamp(40px, 5vw, 70px);
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.innovation-description {
+    color: #555;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.innovation-image {
+    flex: 1;
+    max-width: 550px;
+}
+
+.innovation-image svg {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(245, 130, 32, 0.2));
+}
+
+
+/* ============================= */
+/* QUIZ BUTTON */
+/* ============================= */
+
+.quiz-button,
+#next-button {
+    background-color: #f58220;
+    color: white;
+    border: none;
+    border-radius: 30px;
+
+    padding: 16px 30px;
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.quiz-button:hover,
+#next-button:hover {
+    background-color: #d96b13;
+    transform: translateY(-3px);
+}
+
+
+/* ============================= */
+/* QUIZ SECTION */
+/* ============================= */
+
+.quiz-section {
+    display: none;
+    background-color: #fff7ed;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.quiz-section h2 {
+    color: #e87518;
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.quiz-section > p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.quiz-box {
+    background-color: white;
+    max-width: 700px;
+    margin: auto;
+
+    padding: 35px;
+    border-radius: 18px;
+    border: 2px solid #f58220;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.quiz-box h3 {
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+#answer-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.answer-button {
+    background-color: #fff0df;
+    color: #75421f;
+
+    border: 2px solid #f58220;
+    border-radius: 10px;
+
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.answer-button:hover:not(:disabled) {
+    background-color: #ffdbb5;
+}
+
+.answer-button:disabled {
+    cursor: default;
+    opacity: 0.85;
+}
+
+.answer-button.correct {
+    background-color: #d9f5df;
+    border-color: #399b54;
+    color: #205e32;
+}
+
+.answer-button.wrong {
+    background-color: #ffe0dc;
+    border-color: #d9534f;
+    color: #922b27;
+}
+
+#quiz-feedback {
+    font-weight: bold;
+    margin: 20px 0;
+    min-height: 24px;
+    color: #d96b13;
+}
+
+#next-button {
+    margin-top: 10px;
+}
+
+
+/* ============================= */
+/* DID YOU KNOW SECTION */
+/* ============================= */
+
+.facts-section {
+    background-color: #fffaf4;
+    padding: 65px 4%;
+    text-align: center;
+}
+
+.facts-section h2 {
+    color: #e87518;
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.facts-subtitle {
+    color: #666;
+    font-size: 17px;
+    margin-bottom: 40px;
+}
+
+.facts-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.facts-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    width: 100%;
+    max-width: 1050px;
+}
+
+
+/* Individual fact cards */
+
+.fact-card {
+    min-height: 300px;
+    aspect-ratio: 1 / 1;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #ffe7ce
+    );
+
+    border: 2px solid #f58220;
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 22px;
+
+    box-shadow: 0 8px 18px rgba(245, 130, 32, 0.12);
+
+    animation: cardAppear 0.4s ease;
+}
+
+.fact-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.fact-card h3 {
+    color: #d96b13;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.fact-card p {
+    color: #444;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* Carousel arrows */
+
+.arrow-button {
+    flex-shrink: 0;
+    background-color: #f58220;
+    color: white;
+
+    border: none;
+    border-radius: 50%;
+
+    width: 55px;
+    height: 55px;
+
+    font-size: 25px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.arrow-button:hover {
+    background-color: #d96b13;
+    transform: scale(1.1);
+}
+
+.facts-instruction {
+    color: #888;
+    font-size: 14px;
+    margin-top: 25px;
+}
+
+
+/* Card animation */
+
+@keyframes cardAppear {
+    from {
+        opacity: 0.4;
+        transform: translateX(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* ============================= */
+/* RESPONSIVE DESIGN */
+/* ============================= */
+
+@media (max-width: 900px) {
+
+    .innovation-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .innovation-image {
+        width: 100%;
+    }
+
+    .facts-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fact-card:last-child {
+        display: none;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    #answer-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .facts-container {
+        grid-template-columns: 1fr;
+    }
+
+    .fact-card:not(:first-child) {
+        display: none;
+    }
+
+    .facts-carousel {
+        gap: 8px;
+    }
+
+    .arrow-button {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .fact-card {
+        min-height: 300px;
+    }
+
+}
