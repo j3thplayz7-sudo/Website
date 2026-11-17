@@ -356,7 +356,16 @@ function displayFacts() {
     const container =
         document.getElementById("facts-container");
 
+
+     // Stop if this page does not have the facts section
+    if (!container) {
+        return;
+    }
+
     container.innerHTML = "";
+
+    // Keep the rest of your existing code here
+
 
     for (let i = 0; i < 3; i++) {
 
