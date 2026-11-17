@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovate - Infrastructure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                <img src="images/logo.jpg" alt="Website Logo">
+                <span>Innovate</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="industry_future.html">The Future of Industry</a>
+                <a href="innovation.html">Innovation</a>
+                <a href="infrastructure.html">Infrastructure</a>
+                <a href="be_apart.html">Be Apart</a>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="infrastructure-hero">
+
+            <div class="infrastructure-content">
+
+                <p class="infrastructure-label">
+                    BUILDING TOMORROW
+                </p>
+
+                <h1>
+                    The Foundations of a Better Future.
+                </h1>
+
+                <p class="infrastructure-subtitle">
+                    Building a better future through infrastructure.
+                </p>
+
+            </div>
+
+            <div class="infrastructure-image">
+
+                <img src="images/futuristic-city.jpg"
+                     alt="A futuristic sustainable city">
+
+            </div>
+
+        </section>
+
+
+        <!-- OPEN MINI QUIZ -->
+        <section class="infrastructure-quiz">
+
+            <h2>Test Your Infrastructure Knowledge!</h2>
+
+            <p class="quiz-intro">
+                Answer these five questions and discover
+                how much you know about infrastructure.
+            </p>
+
+            <div class="infrastructure-questions">
+
+                <!-- QUESTION 1 -->
+                <div class="infra-question">
+                    <h3>1. What is infrastructure?</h3>
+
+                    <button class="infra-answer" data-correct="true">
+                        Roads, buildings and essential systems
+                    </button>
+
+                    <button class="infra-answer">
+                        Only houses and apartments
+                    </button>
+
+                    <button class="infra-answer">
+                        Only vehicles and machines
+                    </button>
+
+                    <p class="infra-feedback"></p>
+                </div>
+
+
+                <!-- QUESTION 2 -->
+                <div class="infra-question">
+                    <h3>2. Why are roads important to a city?</h3>
+
+                    <button class="infra-answer">
+                        They are mainly used for decoration
+                    </button>
+
+                    <button class="infra-answer" data-correct="true">
+                        They connect places and allow transportation
+                    </button>
+
+                    <button class="infra-answer">
+                        They generate electricity
+                    </button>
+
+                    <p class="infra-feedback"></p>
+                </div>
+
+
+                <!-- QUESTION 3 -->
+                <div class="infra-question">
+                    <h3>3. Which infrastructure helps supply electricity to homes?</h3>
+
+                    <button class="infra-answer">
+                        Airports
+                    </button>
+
+                    <button class="infra-answer">
+                        Ports
+                    </button>
+
+                    <button class="infra-answer" data-correct="true">
+                        Power plants
+                    </button>
+
+                    <p class="infra-feedback"></p>
+                </div>
+
+
+                <!-- QUESTION 4 -->
+                <div class="infra-question">
+                    <h3>4. What is the main purpose of a port?</h3>
+
+                    <button class="infra-answer" data-correct="true">
+                        To allow ships to transport people and goods
+                    </button>
+
+                    <button class="infra-answer">
+                        To store electricity
+                    </button>
+
+                    <button class="infra-answer">
+                        To build houses
+                    </button>
+
+                    <p class="infra-feedback"></p>
+                </div>
+
+
+                <!-- QUESTION 5 -->
+                <div class="infra-question">
+                    <h3>5. How can green infrastructure benefit a city?</h3>
+
+                    <button class="infra-answer">
+                        By increasing pollution
+                    </button>
+
+                    <button class="infra-answer" data-correct="true">
+                        By reducing environmental impact and improving sustainability
+                    </button>
+
+                    <button class="infra-answer">
+                        By using more fossil fuels
+                    </button>
+
+                    <p class="infra-feedback"></p>
+                </div>
+
+            </div>
+
+            <p class="infra-score" id="infra-score">
+                Answer all five questions to see your score!
+            </p>
+
+        </section>
+
+
+        <!-- INTERACTIVE CITY -->
+        <section class="city-section">
+
+            <h2>Explore the City</h2>
+
+            <p class="city-description">
+                Every part of a city plays an important role.
+                Click on the different infrastructures to discover why!
+            </p>
+
+
+            <!-- ILLUSTRATED CITY -->
+            <div class="city-scene">
+
+                <div class="city-sky">
+                    <span class="city-sun">☀️</span>
+                    <span class="city-cloud cloud-one">☁️</span>
+                    <span class="city-cloud cloud-two">☁️</span>
+
+                    <div class="city-buildings">
+
+                        <div class="city-building building-one">
+                            <span>▥</span>
+                        </div>
+
+                        <div class="city-building building-two">
+                            <span>▥</span>
+                        </div>
+
+                        <div class="city-building building-three">
+                            <span>▥</span>
+                        </div>
+
+                        <div class="city-building building-four">
+                            <span>▥</span>
+                        </div>
+
+                        <div class="city-building building-five">
+                            <span>▥</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="city-ground">
+
+                    <div class="city-road">
+                        <span>🚗</span>
+                        <span>🚙</span>
+                        <span>🚕</span>
+                    </div>
+
+                    <!-- CLICKABLE INFRASTRUCTURES -->
+
+                    <button class="city-item house-item"
+                            data-name="Houses"
+                            aria-label="Explore houses">
+                        🏠
+                    </button>
+
+                    <button class="city-item building-item"
+                            data-name="Buildings"
+                            aria-label="Explore buildings">
+                        🏢
+                    </button>
+
+                    <button class="city-item road-item"
+                            data-name="Roads"
+                            aria-label="Explore roads">
+                        🛣️
+                    </button>
+
+                    <button class="city-item power-item"
+                            data-name="Power Plants"
+                            aria-label="Explore power plants">
+                        ⚡
+                    </button>
+
+                    <button class="city-item port-item"
+                            data-name="Ports"
+                            aria-label="Explore ports">
+                        🚢
+                    </button>
+
+                    <button class="city-item airport-item"
+                            data-name="Airports"
+                            aria-label="Explore airports">
+                        ✈️
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFORMATION PANEL -->
+            <div class="city-info" id="city-info">
+
+                <h3 id="city-info-title">
+                    Select an Infrastructure!
+                </h3>
+
+                <p id="city-info-text">
+                    Click on any of the six icons in the city
+                    to discover how it benefits the community.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
