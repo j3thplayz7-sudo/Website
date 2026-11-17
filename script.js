@@ -394,3 +394,162 @@ function moveFacts(direction) {
 /* Load the facts when the page opens */
 
 displayFacts();
+
+
+
+/* ================================= */
+/* INFRASTRUCTURE MINI QUIZ */
+/* ================================= */
+
+const infraQuestions = document.querySelectorAll(".infra-question");
+
+let infraScore = 0;
+let infraAnswered = 0;
+
+
+/* Check the selected answer */
+
+infraQuestions.forEach(question => {
+
+    const buttons = question.querySelectorAll(".infra-answer");
+
+    buttons.forEach(button => {
+
+        button.addEventListener("click", function() {
+
+            // Prevent answering the same question twice
+            if (question.dataset.answered === "true") {
+                return;
+            }
+
+            question.dataset.answered = "true";
+            infraAnswered++;
+
+            const feedback =
+                question.querySelector(".infra-feedback");
+
+            const isCorrect = this.dataset.correct === "true";
+
+            if (isCorrect) {
+
+                infraScore++;
+
+                this.classList.add("correct");
+
+                feedback.textContent = "Correct! Great job!";
+
+            } else {
+
+                this.classList.add("wrong");
+
+                feedback.textContent =
+                    "Not quite! The correct answer is highlighted.";
+
+            }
+
+            // Highlight the correct answer
+            buttons.forEach(answer => {
+
+                answer.disabled = true;
+
+                if (answer.dataset.correct === "true") {
+                    answer.classList.add("correct");
+                }
+
+            });
+
+            // Update score
+            document.getElementById("infra-score").textContent =
+                "Your progress: " + infraAnswered +
+                "/5 questions answered | Score: " +
+                infraScore + "/5";
+
+            // Display final result
+            if (infraAnswered === 5) {
+
+                document.getElementById("infra-score").textContent =
+                    "Quiz completed! You scored " +
+                    infraScore + " out of 5!";
+
+            }
+
+        });
+
+    });
+
+});
+
+
+/* ================================= */
+/* INTERACTIVE CITY */
+/* ================================= */
+
+
+/* Information about each infrastructure */
+
+const infraInformation = {
+
+    "Houses": {
+        title: "🏠 Houses – A Place to Call Home",
+        text: "Houses provide people with safe places to live, rest and raise families. Well-planned housing gives communities access to essential services and helps create comfortable neighbourhoods."
+    },
+
+    "Buildings": {
+        title: "🏢 Buildings – Spaces for Growth",
+        text: "Buildings provide spaces for schools, hospitals, offices and businesses. They support education, healthcare, employment and economic development within a city."
+    },
+
+    "Roads": {
+        title: "🛣️ Roads – Connecting Communities",
+        text: "Roads allow people and goods to travel between different locations. Good road networks make transportation more efficient and help businesses deliver products."
+    },
+
+    "Power Plants": {
+        title: "⚡ Power Plants – Keeping the City Running",
+        text: "Power plants generate electricity for homes, hospitals, factories and other essential services. Renewable energy sources such as solar and wind can help reduce pollution and reliance on fossil fuels."
+    },
+
+    "Ports": {
+        title: "🚢 Ports – Connecting the World",
+        text: "Ports allow ships to transport goods and passengers between countries. They support international trade, create employment and help businesses access global markets."
+    },
+
+    "Airports": {
+        title: "✈️ Airports – Bringing the World Closer",
+        text: "Airports connect cities and countries through air travel. They support tourism, international business and the transportation of important goods."
+    }
+
+};
+
+
+/* Select an infrastructure */
+
+const cityItems = document.querySelectorAll(".city-item");
+
+cityItems.forEach(item => {
+
+    item.addEventListener("click", function() {
+
+        // Remove previous selection
+        cityItems.forEach(cityItem => {
+            cityItem.classList.remove("selected");
+        });
+
+        // Highlight the new selection
+        this.classList.add("selected");
+
+        // Get the selected infrastructure
+        const name = this.dataset.name;
+
+        const information = infraInformation[name];
+
+        // Replace the previous information
+        document.getElementById("city-info-title").textContent =
+            information.title;
+
+        document.getElementById("city-info-text").textContent =
+            information.text;
+
+    });
+
+});
