@@ -868,7 +868,7 @@ if (quizContainer) {
 
 
     // HTML elements
-    const questionHeading = document.getElementById("innovatorCurrentQuestion");
+    const questionHeading = document.getElementById("innovator-question");
     const answersContainer = document.getElementById("innovator-answers");
     const nextButton = document.getElementById("innovator-next");
     const questionNumber = document.getElementById("quiz-question-number");
@@ -878,7 +878,7 @@ if (quizContainer) {
     // Display a question
     function displayInnovatorQuestion() {
 
-        const questionData = innovatorQuestions[currentQuestion];
+        const questionData = innovatorQuestions[innovatorCurrentQuestion];
 
         innovatorSelectedAnswer = null;
 
