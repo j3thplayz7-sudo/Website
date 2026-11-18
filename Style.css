@@ -1533,3 +1533,37 @@ body {
     color: #888;
     margin-top: 12px;
 }
+
+
+
+/* 2050 Finale Heading */
+.finale-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.finale-heading h2 {
+    margin: 0;
+    font-size: 32px;
+    color: #d96512;
+}
+
+.finale-line {
+    width: 55px;
+    height: 3px;
+    background: #f28c28;
+    border-radius: 5px;
+}
+
+/* Final Closing Message */
+.finale-message {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #70421f;
+    font-weight: 500;
+}
