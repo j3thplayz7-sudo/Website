@@ -568,50 +568,50 @@ cityItems.forEach(item => {
 /* ================================= */
 /* BE APART - FUTURE TIMELINE */
 /* ================================= */
-
 const timelineYears = [
     {
         year: "2026",
         title: "2026 - The Starting Point",
-        icon: "🏭",
-        description: "Industries begin adopting more renewable energy and smarter technologies to use resources efficiently."
+        image: "images/future-2026.jpg",
+        description: "Factories increasingly adopt solar energy and efficient machinery. This helps reduce energy waste, lower emissions and make industrial production more sustainable."
     },
 
     {
         year: "2030",
         title: "2030 - A Greener World",
-        icon: "🌱",
-        description: "More cities could adopt renewable energy and expand electric public transport, helping create cleaner urban environments."
+        image: "images/future-2030.jpg",
+        description: "Cleaner public transport and renewable-powered buildings help reduce pollution. Cities become more environmentally friendly and easier to travel around."
     },
 
     {
         year: "2035",
         title: "2035 - Smarter Industries",
-        icon: "🤖",
-        description: "Artificial intelligence and advanced robotics could help factories manufacture products more efficiently while reducing material waste."
+        image: "images/future-2035.jpg",
+        description: "Robots and intelligent systems help factories produce goods more accurately. This improves productivity while reducing mistakes and unnecessary material waste."
     },
 
     {
         year: "2040",
         title: "2040 - Connected Infrastructure",
-        icon: "🏙️",
-        description: "Smart transport systems, connected buildings and improved energy networks could make cities more efficient and interconnected."
+        image: "images/future-2040.jpg",
+        description: "Connected transport and energy networks help cities manage resources more efficiently. Communities benefit from smoother transportation and more reliable services."
     },
 
     {
         year: "2045",
         title: "2045 - A New Era of Innovation",
-        icon: "💡",
-        description: "New sustainable building materials and improved energy storage could help communities become more environmentally friendly."
+        image: "images/future-2045.jpg",
+        description: "Innovative construction materials and improved energy storage make buildings more sustainable. This helps communities reduce their environmental impact."
     },
 
     {
         year: "2050",
         title: "2050 - The World We Imagine",
-        icon: "🌍",
-        description: "Imagine a world where clean energy, smart infrastructure and sustainable industries work together to create a better future for everyone."
+        image: "images/future-2050.jpg",
+        description: "Clean energy, smart infrastructure and sustainable industries work together. Communities enjoy cleaner surroundings, efficient services and more opportunities for future generations."
     }
 ];
+
 
 
 // Find the timeline elements
@@ -656,7 +656,9 @@ if (
             timelineHeading.textContent = yearData.title;
 
             // Update the illustration symbol
-            timelineImage.textContent = yearData.icon;
+            timelineImage.innerHTML = `
+    <img src="${yearData.image}" alt="Future development in ${yearData.year}">
+`;
 
             // Update the description
             timelineDescription.textContent = yearData.description;
