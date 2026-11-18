@@ -1489,20 +1489,21 @@ body {
 
 
 /* 2050 Reflection Section */
-
 .reflection-section {
     display: none;
-    margin-top: 35px;
-    padding: 30px;
-    background: #fff7ed;
-    border-radius: 15px;
+    margin-top: 40px;
+    padding: 35px;
+    background: linear-gradient(135deg, #fff0df, #ffe0bd);
+    border: 2px solid #f28c28;
+    border-radius: 18px;
     text-align: center;
+    box-shadow: 0 8px 20px rgba(180, 95, 20, 0.12);
 }
 
 .reflection-section h2 {
-    color: #e87518;
-    font-size: 26px;
-    margin-bottom: 15px;
+    color: #d96512;
+    font-size: 30px;
+    margin-bottom: 18px;
 }
 
 .reflection-section p {
@@ -1512,12 +1513,19 @@ body {
 .reflection-section textarea {
     width: 100%;
     max-width: 650px;
-    padding: 15px;
-    border: 2px solid #ffbd82;
-    border-radius: 10px;
+    padding: 16px;
+    border: 2px solid #f2a45e;
+    border-radius: 12px;
+    background: white;
     font-family: Arial, sans-serif;
     font-size: 15px;
     resize: vertical;
+    outline: none;
+}
+
+.reflection-section textarea:focus {
+    border-color: #e87518;
+    box-shadow: 0 0 8px rgba(232, 117, 24, 0.2);
 }
 
 .reflection-note {
