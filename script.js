@@ -845,3 +845,120 @@ const innovatorQuestions = [
     }
 
 ];
+
+
+
+/* ================================= */
+/* INNOVATOR QUIZ - QUESTION DISPLAY */
+/* ================================= */
+
+const quizContainer = document.getElementById("innovator-quiz-container");
+
+if (quizContainer) {
+
+    let currentQuestion = 0;
+    let selectedAnswer = null;
+
+    // Personality scores
+    let innovatorScores = {
+        green: 0,
+        engineer: 0,
+        technology: 0,
+        systems: 0
+    };
+
+    // HTML elements
+    const questionHeading = document.getElementById("innovator-question");
+    const answersContainer = document.getElementById("innovator-answers");
+    const nextButton = document.getElementById("innovator-next");
+    const questionNumber = document.getElementById("quiz-question-number");
+    const progressPercentage = document.getElementById("quiz-progress-percentage");
+    const progressFill = document.getElementById("quiz-progress-fill");
+
+    // Display a question
+    function displayInnovatorQuestion() {
+
+        const questionData = innovatorQuestions[currentQuestion];
+
+        selectedAnswer = null;
+
+        questionHeading.textContent = questionData.question;
+
+        questionNumber.textContent =
+            `Question ${currentQuestion + 1} of ${innovatorQuestions.length}`;
+
+        const progress = ((currentQuestion + 1) / innovatorQuestions.length) * 100;
+
+        progressPercentage.textContent = `${progress}%`;
+        progressFill.style.width = `${progress}%`;
+
+        answersContainer.innerHTML = "";
+
+        questionData.answers.forEach(answer => {
+
+            const answerButton = document.createElement("button");
+
+            answerButton.className = "quiz-answer";
+
+            answerButton.innerHTML = `
+                <span class="answer-icon">${answer.icon}</span>
+                <span>${answer.text}</span>
+            `;
+
+            answerButton.addEventListener("click", function() {
+
+                // Remove previous selection
+                document.querySelectorAll(".quiz-answer").forEach(button => {
+                    button.classList.remove("selected");
+                });
+
+                // Highlight selected answer
+                answerButton.classList.add("selected");
+
+                selectedAnswer = answer.type;
+
+                nextButton.disabled = false;
+            });
+
+            answersContainer.appendChild(answerButton);
+
+        });
+
+        nextButton.disabled = true;
+
+        if (currentQuestion === innovatorQuestions.length - 1) {
+            nextButton.textContent = "See My Result →";
+        } else {
+            nextButton.textContent = "Next Question →";
+        }
+    }
+
+    // Next button
+    nextButton.addEventListener("click", function() {
+
+        if (selectedAnswer === null) {
+            return;
+        }
+
+        // Add one point to the selected personality
+        innovatorScores[selectedAnswer]++;
+
+        if (currentQuestion < innovatorQuestions.length - 1) {
+
+            currentQuestion++;
+
+            displayInnovatorQuestion();
+
+        } else {
+
+            console.log("Quiz completed!");
+            console.log("Final scores:", innovatorScores);
+
+        }
+
+    });
+
+    // Start quiz
+    displayInnovatorQuestion();
+
+}
