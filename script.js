@@ -623,6 +623,7 @@ const timelineDescription = document.getElementById("timeline-description");
 
 const previousButton = document.getElementById("previous-year");
 const nextButton = document.getElementById("next-year");
+const reflectionSection = document.getElementById("reflection-section");
 
 
 // Only run this code on the Be Apart page
@@ -662,6 +663,11 @@ if (
 
             // Update the description
             timelineDescription.textContent = yearData.description;
+            // Show reflection section only for 2050
+            if (reflectionSection) {
+                reflectionSection.style.display =
+                    yearData.year === "2050" ? "block" : "none";
+            }
 
             // Update the selected dot
             timelineItems.forEach((item, i) => {
