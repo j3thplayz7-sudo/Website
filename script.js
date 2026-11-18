@@ -562,3 +562,162 @@ cityItems.forEach(item => {
     });
 
 });
+
+
+
+/* ================================= */
+/* BE APART - FUTURE TIMELINE */
+/* ================================= */
+
+const timelineYears = [
+    {
+        year: "2026",
+        title: "2026 - The Starting Point",
+        icon: "🏭",
+        description: "Industries begin adopting more renewable energy and smarter technologies to use resources efficiently."
+    },
+
+    {
+        year: "2030",
+        title: "2030 - A Greener World",
+        icon: "🌱",
+        description: "More cities could adopt renewable energy and expand electric public transport, helping create cleaner urban environments."
+    },
+
+    {
+        year: "2035",
+        title: "2035 - Smarter Industries",
+        icon: "🤖",
+        description: "Artificial intelligence and advanced robotics could help factories manufacture products more efficiently while reducing material waste."
+    },
+
+    {
+        year: "2040",
+        title: "2040 - Connected Infrastructure",
+        icon: "🏙️",
+        description: "Smart transport systems, connected buildings and improved energy networks could make cities more efficient and interconnected."
+    },
+
+    {
+        year: "2045",
+        title: "2045 - A New Era of Innovation",
+        icon: "💡",
+        description: "New sustainable building materials and improved energy storage could help communities become more environmentally friendly."
+    },
+
+    {
+        year: "2050",
+        title: "2050 - The World We Imagine",
+        icon: "🌍",
+        description: "Imagine a world where clean energy, smart infrastructure and sustainable industries work together to create a better future for everyone."
+    }
+];
+
+
+// Find the timeline elements
+const timelineItems = document.querySelectorAll(".timeline-item");
+
+const timelineHeading = document.getElementById("timeline-year");
+const timelineImage = document.querySelector(".timeline-image");
+const timelineDescription = document.getElementById("timeline-description");
+
+const previousButton = document.getElementById("previous-year");
+const nextButton = document.getElementById("next-year");
+
+
+// Only run this code on the Be Apart page
+if (
+    timelineItems.length > 0 &&
+    timelineHeading &&
+    timelineImage &&
+    timelineDescription &&
+    previousButton &&
+    nextButton
+) {
+
+    let selectedYear = 0;
+
+
+    // Display the selected year
+    function displayTimelineYear(index) {
+
+        selectedYear = index;
+
+        const yearData = timelineYears[selectedYear];
+
+        // Add a transition effect
+        const timelineContent = document.querySelector(".timeline-content");
+
+        timelineContent.classList.add("changing");
+
+        setTimeout(() => {
+
+            // Update the heading
+            timelineHeading.textContent = yearData.title;
+
+            // Update the illustration symbol
+            timelineImage.textContent = yearData.icon;
+
+            // Update the description
+            timelineDescription.textContent = yearData.description;
+
+            // Update the selected dot
+            timelineItems.forEach((item, i) => {
+
+                item.classList.toggle("active", i === selectedYear);
+
+            });
+
+            // Update button states
+            previousButton.disabled = selectedYear === 0;
+            nextButton.disabled = selectedYear === timelineYears.length - 1;
+
+            // Change the final button text for 2050
+            if (selectedYear === timelineYears.length - 1) {
+                nextButton.textContent = "Final Year";
+            } else {
+                nextButton.textContent = "Next Year →";
+            }
+
+            timelineContent.classList.remove("changing");
+
+        }, 200);
+    }
+
+
+    // Allow visitors to click a year
+    timelineItems.forEach((item, index) => {
+
+        item.addEventListener("click", function() {
+
+            displayTimelineYear(index);
+
+        });
+
+    });
+
+
+    // Previous year button
+    previousButton.addEventListener("click", function() {
+
+        if (selectedYear > 0) {
+            displayTimelineYear(selectedYear - 1);
+        }
+
+    });
+
+
+    // Next year button
+    nextButton.addEventListener("click", function() {
+
+        if (selectedYear < timelineYears.length - 1) {
+            displayTimelineYear(selectedYear + 1);
+        }
+
+    });
+
+
+    // Display 2026 when the page first opens
+    displayTimelineYear(0);
+
+}

@@ -1205,3 +1205,262 @@ body {
     }
 
 }
+
+
+
+/* =================================
+   BE APART - HERO SECTION
+================================= */
+
+.be-apart-hero {
+    text-align: center;
+    padding: 80px 20px 60px;
+    background: linear-gradient(135deg, #fff7ed, #ffdfbd);
+}
+
+.be-apart-hero h1 {
+    font-size: 48px;
+    color: #e87518;
+    margin-bottom: 15px;
+}
+
+.be-apart-hero p {
+    font-size: 19px;
+    color: #444;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+
+/* =================================
+   TIMELINE SECTION
+================================= */
+
+.future-timeline {
+    padding: 70px 6%;
+    text-align: center;
+    background: #fffaf4;
+}
+
+.future-timeline h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.timeline-intro {
+    font-size: 17px;
+    color: #666;
+    max-width: 750px;
+    margin: 0 auto 55px;
+    line-height: 1.6;
+}
+
+
+/* =================================
+   TIMELINE DOTS AND CONNECTING LINE
+================================= */
+
+.timeline {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto 55px;
+    position: relative;
+}
+
+/* The connecting line */
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 8.33%;
+    right: 8.33%;
+    height: 4px;
+    background: #f58220;
+    border-radius: 10px;
+}
+
+.timeline-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    gap: 12px;
+    color: #777;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+/* Timeline circles */
+.timeline-dot {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 4px solid #f58220;
+    border-radius: 50%;
+    transition: 0.3s ease;
+}
+
+/* Selected timeline year */
+.timeline-item.active {
+    color: #e87518;
+}
+
+.timeline-item.active .timeline-dot {
+    background: #f58220;
+    transform: scale(1.3);
+    box-shadow: 0 0 0 6px rgba(245, 130, 32, 0.15);
+}
+
+/* Hover effect */
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.2);
+}
+
+
+/* =================================
+   SELECTED YEAR CONTENT
+================================= */
+
+.timeline-content {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 35px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.timeline-content h3 {
+    font-size: 28px;
+    color: #e87518;
+    margin-bottom: 25px;
+}
+
+.timeline-image {
+    width: 100%;
+    height: 320px;
+    background: #fff0df;
+    border-radius: 14px;
+    margin-bottom: 25px;
+}
+
+.timeline-content p {
+    font-size: 17px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+
+/* =================================
+   PREVIOUS AND NEXT BUTTONS
+================================= */
+
+.timeline-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.timeline-buttons button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #f58220;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.timeline-buttons button:hover:not(:disabled) {
+    background: #d96b13;
+    transform: translateY(-2px);
+}
+
+.timeline-buttons button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+
+/* =================================
+   MOBILE RESPONSIVENESS
+================================= */
+
+@media (max-width: 650px) {
+
+    .be-apart-hero h1 {
+        font-size: 34px;
+    }
+
+    .future-timeline {
+        padding: 50px 15px;
+    }
+
+    .timeline {
+        margin-bottom: 40px;
+    }
+
+    .timeline-item {
+        font-size: 12px;
+    }
+
+    .timeline-dot {
+        width: 16px;
+        height: 16px;
+        border-width: 3px;
+    }
+
+    .timeline::before {
+        top: 10px;
+    }
+
+    .timeline-content {
+        padding: 20px;
+    }
+
+    .timeline-content h3 {
+        font-size: 22px;
+    }
+
+    .timeline-image {
+        height: 200px;
+    }
+
+    .timeline-buttons button {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+}
+
+
+
+/* Timeline transition effect */
+
+.timeline-content {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.timeline-content.changing {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+/* Temporary timeline illustrations */
+
+.timeline-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 110px;
+}
