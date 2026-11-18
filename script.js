@@ -733,3 +733,115 @@ if (
     displayTimelineYear(0);
 
 }
+
+
+
+
+
+/* ================================= */
+/* BE APART - INNOVATOR PERSONALITY QUIZ */
+/* ================================= */
+
+const innovatorQuestions = [
+
+    {
+        question: "Which activity would you enjoy most?",
+        answers: [
+            { text: "Creating eco-friendly solutions", type: "green", icon: "🌱" },
+            { text: "Designing and building something", type: "engineer", icon: "⚙️" },
+            { text: "Exploring new technologies", type: "technology", icon: "💡" },
+            { text: "Improving how systems work", type: "systems", icon: "🧠" }
+        ]
+    },
+
+    {
+        question: "What problem would you most like to solve?",
+        answers: [
+            { text: "Reducing pollution and waste", type: "green", icon: "🌍" },
+            { text: "Building stronger infrastructure", type: "engineer", icon: "🏗️" },
+            { text: "Creating a new technological invention", type: "technology", icon: "🚀" },
+            { text: "Making everyday processes more efficient", type: "systems", icon: "🔧" }
+        ]
+    },
+
+    {
+        question: "Which future development excites you most?",
+        answers: [
+            { text: "Cities powered by clean energy", type: "green", icon: "☀️" },
+            { text: "Advanced bridges and buildings", type: "engineer", icon: "🌉" },
+            { text: "Robots and artificial intelligence", type: "technology", icon: "🤖" },
+            { text: "Smart cities where everything connects", type: "systems", icon: "🏙️" }
+        ]
+    },
+
+    {
+        question: "What would you bring to a team project?",
+        answers: [
+            { text: "Ideas that protect the environment", type: "green", icon: "🌿" },
+            { text: "Practical designs and solutions", type: "engineer", icon: "📐" },
+            { text: "Creative and experimental ideas", type: "technology", icon: "🔬" },
+            { text: "Organisation and planning", type: "systems", icon: "📊" }
+        ]
+    },
+
+    {
+        question: "Which invention would you most like to create?",
+        answers: [
+            { text: "A machine that produces clean energy", type: "green", icon: "🌞" },
+            { text: "A self-building construction machine", type: "engineer", icon: "🏗️" },
+            { text: "A revolutionary digital device", type: "technology", icon: "📱" },
+            { text: "A system that connects entire cities", type: "systems", icon: "🌐" }
+        ]
+    },
+
+    {
+        question: "What inspires you when thinking about the future?",
+        answers: [
+            { text: "A healthier planet for everyone", type: "green", icon: "🌎" },
+            { text: "Amazing structures and engineering", type: "engineer", icon: "🏢" },
+            { text: "Discoveries that change the world", type: "technology", icon: "✨" },
+            { text: "A world that works more smoothly", type: "systems", icon: "⚡" }
+        ]
+    },
+
+    {
+        question: "Which challenge sounds most interesting?",
+        answers: [
+            { text: "Finding ways to reuse resources", type: "green", icon: "♻️" },
+            { text: "Designing a solution to a structural problem", type: "engineer", icon: "🔩" },
+            { text: "Experimenting with a new invention", type: "technology", icon: "🧪" },
+            { text: "Connecting different technologies together", type: "systems", icon: "🔗" }
+        ]
+    },
+
+    {
+        question: "Which subject would you most enjoy exploring?",
+        answers: [
+            { text: "Environmental science", type: "green", icon: "🌱" },
+            { text: "Engineering and architecture", type: "engineer", icon: "📏" },
+            { text: "Computer science and robotics", type: "technology", icon: "💻" },
+            { text: "Technology and systems design", type: "systems", icon: "🧩" }
+        ]
+    },
+
+    {
+        question: "What would make you feel most accomplished?",
+        answers: [
+            { text: "Making industries more sustainable", type: "green", icon: "🌳" },
+            { text: "Building something that helps communities", type: "engineer", icon: "🏘️" },
+            { text: "Inventing something never seen before", type: "technology", icon: "💡" },
+            { text: "Making a complicated system work better", type: "systems", icon: "⚙️" }
+        ]
+    },
+
+    {
+        question: "If you could shape the world of 2050, what would you focus on?",
+        answers: [
+            { text: "A cleaner and greener planet", type: "green", icon: "🌿" },
+            { text: "Stronger and smarter infrastructure", type: "engineer", icon: "🌉" },
+            { text: "Groundbreaking inventions and technology", type: "technology", icon: "🚀" },
+            { text: "Connected and efficient communities", type: "systems", icon: "🌐" }
+        ]
+    }
+
+];
