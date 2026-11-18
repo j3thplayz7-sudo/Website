@@ -854,21 +854,21 @@ const innovatorQuestions = [
 
 const quizContainer = document.getElementById("innovator-quiz-container");
 
+let innovatorCurrentQuestion = 0;
+let innovatorSelectedAnswer = null;
+
+let innovatorScores = {
+    green: 0,
+    engineer: 0,
+    technology: 0,
+    systems: 0
+};
+
 if (quizContainer) {
 
-    let currentQuestion = 0;
-    let selectedAnswer = null;
-
-    // Personality scores
-    let innovatorScores = {
-        green: 0,
-        engineer: 0,
-        technology: 0,
-        systems: 0
-    };
 
     // HTML elements
-    const questionHeading = document.getElementById("innovator-question");
+    const questionHeading = document.getElementById("innovatorCurrentQuestion");
     const answersContainer = document.getElementById("innovator-answers");
     const nextButton = document.getElementById("innovator-next");
     const questionNumber = document.getElementById("quiz-question-number");
@@ -880,14 +880,14 @@ if (quizContainer) {
 
         const questionData = innovatorQuestions[currentQuestion];
 
-        selectedAnswer = null;
+        innovatorSelectedAnswer = null;
 
         questionHeading.textContent = questionData.question;
 
         questionNumber.textContent =
-            `Question ${currentQuestion + 1} of ${innovatorQuestions.length}`;
+            `Question ${innovatorCurrentQuestion + 1} of ${innovatorQuestions.length}`;
 
-        const progress = ((currentQuestion + 1) / innovatorQuestions.length) * 100;
+        const progress = ((innovatorCurrentQuestion + 1) / innovatorQuestions.length) * 100;
 
         progressPercentage.textContent = `${progress}%`;
         progressFill.style.width = `${progress}%`;
@@ -915,7 +915,7 @@ if (quizContainer) {
                 // Highlight selected answer
                 answerButton.classList.add("selected");
 
-                selectedAnswer = answer.type;
+                innovatorSelectedAnswer = answer.type;
 
                 nextButton.disabled = false;
             });
@@ -926,7 +926,7 @@ if (quizContainer) {
 
         nextButton.disabled = true;
 
-        if (currentQuestion === innovatorQuestions.length - 1) {
+        if (innovatorCurrentQuestion === innovatorQuestions.length - 1) {
             nextButton.textContent = "See My Result →";
         } else {
             nextButton.textContent = "Next Question →";
@@ -936,16 +936,16 @@ if (quizContainer) {
     // Next button
     nextButton.addEventListener("click", function() {
 
-        if (selectedAnswer === null) {
+        if (innovatorSelectedAnswer === null) {
             return;
         }
 
         // Add one point to the selected personality
-        innovatorScores[selectedAnswer]++;
+        innovatorScores[innovatorSelectedAnswer]++;
 
-        if (currentQuestion < innovatorQuestions.length - 1) {
+        if (innovatorCurrentQuestion < innovatorQuestions.length - 1) {
 
-            currentQuestion++;
+            innovatorCurrentQuestion++;
 
             displayInnovatorQuestion();
 
@@ -1079,7 +1079,7 @@ if (restartQuizButton) {
     restartQuizButton.addEventListener("click", function() {
 
         // Reset question and scores
-        currentQuestion = 0;
+        innovatorCurrentQuestion = 0;
 
         innovatorScores = {
             green: 0,
