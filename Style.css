@@ -1441,6 +1441,10 @@ body {
         padding: 10px 15px;
         font-size: 13px;
     }
+
+    .timeline-image.final-image {
+        height: 260px;
+    }
 }
 
 
@@ -1465,6 +1469,14 @@ body {
     border-radius: 14px;
     margin-bottom: 25px;
     overflow: hidden;
+}
+
+/* Special 2050 Timeline Image */
+.timeline-image.final-image {
+    height: 420px;
+    border: 3px solid #f28c28;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transition: height 0.3s ease;
 }
 
 .timeline-image img {

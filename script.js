@@ -660,6 +660,10 @@ if (
             timelineImage.innerHTML = `
     <img src="${yearData.image}" alt="Future development in ${yearData.year}">
 `;
+            timelineImage.classList.toggle(
+                "final-image",
+                yearData.year === "2050"
+            );
 
             // Update the description
             timelineDescription.textContent = yearData.description;
