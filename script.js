@@ -951,8 +951,7 @@ if (quizContainer) {
 
         } else {
 
-            console.log("Quiz completed!");
-            console.log("Final scores:", innovatorScores);
+            displayInnovatorResults();
 
         }
 
@@ -960,5 +959,149 @@ if (quizContainer) {
 
     // Start quiz
     displayInnovatorQuestion();
+
+}
+
+
+
+/* ================================= */
+/* INNOVATOR QUIZ - PERSONALITY RESULTS */
+/* ================================= */
+
+const innovatorProfiles = {
+
+    green: {
+        title: "The Green Innovator",
+        image: "images/green-innovator.jpg",
+        description: "You care about creating a healthier planet. You look for ways to make industries more sustainable and protect the environment.",
+        strengths: "Environmental awareness, sustainable thinking and resourcefulness.",
+        future: "You could help create cleaner industries, expand renewable energy and develop solutions that reduce waste."
+    },
+
+    engineer: {
+        title: "The Future Engineer",
+        image: "images/future-engineer.jpg",
+        description: "You enjoy designing, building and improving the world around you. You approach challenges with creativity and practical thinking.",
+        strengths: "Creativity, practical thinking and problem-solving.",
+        future: "You could help design stronger infrastructure, smarter buildings and innovative machines that improve everyday life."
+    },
+
+    technology: {
+        title: "The Technology Pioneer",
+        image: "images/technology-pioneer.jpg",
+        description: "You are curious about what technology could achieve. You enjoy exploring new possibilities and imagining inventions that could change the world.",
+        strengths: "Curiosity, imagination and technological exploration.",
+        future: "You could introduce groundbreaking technologies, develop useful inventions and help industries embrace new discoveries."
+    },
+
+    systems: {
+        title: "The Smart Systems Thinker",
+        image: "images/smart-systems-thinker.jpg",
+        description: "You enjoy connecting ideas and finding better ways for things to work together. You think about the bigger picture.",
+        strengths: "Strategic thinking, organisation and efficiency.",
+        future: "You could help create connected cities, improve transportation networks and make industries operate more efficiently."
+    }
+
+};
+
+
+
+/* ================================= */
+/* INNOVATOR QUIZ - RESULTS DISPLAY */
+/* ================================= */
+
+function displayInnovatorResults() {
+
+    const resultsSection = document.getElementById("innovator-results");
+    const resultsContainer = document.getElementById("results-container");
+    const quizContainer = document.getElementById("innovator-quiz-container");
+    const progressContainer = document.querySelector(".quiz-progress");
+
+    // Find the highest score
+    const highestScore = Math.max(...Object.values(innovatorScores));
+
+    // Find every personality that achieved the highest score
+    const winningTypes = Object.keys(innovatorScores).filter(type => {
+        return innovatorScores[type] === highestScore;
+    });
+
+    // Clear previous results
+    resultsContainer.innerHTML = "";
+
+    // Display each winning personality
+    winningTypes.forEach(type => {
+
+        const profile = innovatorProfiles[type];
+
+        const resultCard = document.createElement("div");
+        resultCard.className = "result-card";
+
+        resultCard.innerHTML = `
+            <img src="${profile.image}" alt="${profile.title}">
+
+            <div class="result-card-content">
+
+                <h3>${profile.title}</h3>
+
+                <p>${profile.description}</p>
+
+                <h4>Your Strengths</h4>
+                <p>${profile.strengths}</p>
+
+                <h4>Your Contribution to the Future</h4>
+                <p>${profile.future}</p>
+
+            </div>
+        `;
+
+        resultsContainer.appendChild(resultCard);
+
+    });
+
+    // Hide the quiz and show the results
+    quizContainer.style.display = "none";
+    progressContainer.style.display = "none";
+    resultsSection.style.display = "block";
+
+    // Scroll to the results
+    resultsSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+}
+
+// Restart the quiz
+const restartQuizButton = document.getElementById("restart-innovator-quiz");
+
+if (restartQuizButton) {
+
+    restartQuizButton.addEventListener("click", function() {
+
+        // Reset question and scores
+        currentQuestion = 0;
+
+        innovatorScores = {
+            green: 0,
+            engineer: 0,
+            technology: 0,
+            systems: 0
+        };
+
+        // Show the quiz again
+        document.getElementById("innovator-results").style.display = "none";
+        document.getElementById("innovator-quiz-container").style.display = "block";
+        document.querySelector(".quiz-progress").style.display = "block";
+
+        // Reset the progress bar and question
+        displayInnovatorQuestion();
+
+        // Return to the quiz
+        document.querySelector(".innovator-quiz").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    });
 
 }

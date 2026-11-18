@@ -1737,3 +1737,99 @@ body {
         min-height: 80px;
     }
 }
+
+
+
+/* ================================= */
+/* INNOVATOR QUIZ - RESULTS */
+/* ================================= */
+
+.innovator-results {
+    display: none;
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 40px;
+    text-align: center;
+}
+
+.innovator-results h2 {
+    color: #e87518;
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.results-intro {
+    color: #70421f;
+    font-size: 17px;
+    margin-bottom: 35px;
+}
+
+.results-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.result-card {
+    background: #fff7ed;
+    border: 2px solid #ffdfc1;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    text-align: left;
+}
+
+.result-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.result-card-content {
+    padding: 25px;
+}
+
+.result-card h3 {
+    color: #e87518;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.result-card h4 {
+    color: #d96512;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.result-card p {
+    color: #70421f;
+    line-height: 1.6;
+}
+
+#restart-innovator-quiz {
+    margin-top: 35px;
+    padding: 14px 35px;
+    background: #f28c28;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#restart-innovator-quiz:hover {
+    background: #d96512;
+}
+
+@media (max-width: 650px) {
+    .innovator-results {
+        padding: 25px 15px;
+    }
+
+    .results-container {
+        grid-template-columns: 1fr;
+    }
+}
