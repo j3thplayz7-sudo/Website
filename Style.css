@@ -1833,3 +1833,525 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* ================================= */
+/* BE APART - HERO POLISH */
+/* ================================= */
+
+.be-apart-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 20px 85px;
+
+    background:
+        radial-gradient(circle at 15% 20%, rgba(245, 130, 32, 0.12), transparent 30%),
+        radial-gradient(circle at 85% 80%, rgba(255, 190, 120, 0.2), transparent 30%),
+        linear-gradient(135deg, #fff7ed, #ffdfbd);
+}
+
+.be-apart-hero h1 {
+    font-size: clamp(38px, 5vw, 58px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.15;
+    margin-bottom: 22px;
+}
+
+.be-apart-hero h1::after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 5px;
+    margin: 22px auto 0;
+    background: #f58220;
+    border-radius: 10px;
+}
+
+.be-apart-hero p {
+    font-size: 19px;
+    max-width: 680px;
+    line-height: 1.8;
+    color: #70421f;
+}
+
+@media (max-width: 650px) {
+    .be-apart-hero {
+        padding: 75px 20px 65px;
+    }
+
+    .be-apart-hero p {
+        font-size: 16px;
+    }
+}
+
+
+/* ================================= */
+/* BE APART - TIMELINE POLISH */
+/* ================================= */
+
+/* Timeline layout */
+.timeline {
+    max-width: 1050px;
+    margin: 0 auto 60px;
+    padding: 10px 0;
+}
+
+/* Connecting line */
+.timeline::before {
+    height: 5px;
+    top: 19px;
+    background: linear-gradient(
+        to right,
+        #f8b16e,
+        #f58220,
+        #d96512
+    );
+    border-radius: 20px;
+}
+
+/* Timeline year labels */
+.timeline-item {
+    gap: 15px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* Timeline dots */
+.timeline-dot {
+    width: 25px;
+    height: 25px;
+    background: white;
+    border: 4px solid #f58220;
+    box-shadow: 0 3px 8px rgba(180, 95, 20, 0.12);
+}
+
+/* Selected year */
+.timeline-item.active {
+    color: #d96512;
+}
+
+.timeline-item.active .timeline-dot {
+    background: #f58220;
+    border: 4px solid white;
+    outline: 3px solid #f58220;
+    transform: scale(1.15);
+    box-shadow: 0 0 0 7px rgba(245, 130, 32, 0.13);
+}
+
+/* Hover effect */
+.timeline-item:hover {
+    color: #d96512;
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.2);
+}
+
+/* ================================= */
+/* TIMELINE CONTENT CARD POLISH */
+/* ================================= */
+
+.timeline-content {
+    padding: 40px;
+    border: 1px solid #ffe0bd;
+    border-radius: 22px;
+    box-shadow: 0 12px 30px rgba(180, 95, 20, 0.09);
+}
+
+.timeline-content h3 {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.timeline-image {
+    border: 1px solid #ffdfbd;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+}
+
+.timeline-content > p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+}
+
+/* Timeline buttons */
+.timeline-buttons button {
+    min-width: 135px;
+    border-radius: 30px;
+    padding: 13px 25px;
+    box-shadow: 0 4px 10px rgba(180, 95, 20, 0.12);
+}
+
+@media (max-width: 650px) {
+    .timeline-item {
+        font-size: 12px;
+        gap: 12px;
+    }
+
+    .timeline-dot {
+        width: 18px;
+        height: 18px;
+    }
+
+    .timeline::before {
+        top: 17px;
+    }
+
+    .timeline-content {
+        padding: 22px 16px;
+    }
+
+    .timeline-content h3 {
+        font-size: 23px;
+    }
+}
+
+
+
+
+/* ================================= */
+/* BE APART - REFLECTION POLISH */
+/* ================================= */
+
+.reflection-section {
+    margin-top: 55px;
+    padding: 50px 35px;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(245, 130, 32, 0.16),
+            transparent 45%
+        ),
+        linear-gradient(135deg, #fff7ed, #ffe3c5);
+
+    border: 2px solid #f5bd87;
+    border-radius: 24px;
+
+    box-shadow: 0 12px 30px rgba(180, 95, 20, 0.12);
+}
+
+/* Decorative heading */
+.finale-heading {
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.finale-heading h2 {
+    font-size: clamp(23px, 3vw, 32px);
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.finale-line {
+    width: 65px;
+    height: 4px;
+    flex-shrink: 0;
+}
+
+/* Closing message */
+.finale-message {
+    font-size: 19px;
+    max-width: 650px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+}
+
+/* Reflection question */
+.reflection-section > p:not(.finale-message):not(.reflection-note) {
+    color: #70421f;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+/* Textarea */
+.reflection-section textarea {
+    display: block;
+    width: 100%;
+    max-width: 680px;
+    min-height: 130px;
+    margin: 0 auto;
+
+    padding: 20px;
+    border: 2px solid #f2bd8b;
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.95);
+    color: #70421f;
+
+    font-size: 16px;
+    line-height: 1.6;
+
+    transition: border-color 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.reflection-section textarea:focus {
+    border-color: #e87518;
+    box-shadow: 0 0 0 4px rgba(232, 117, 24, 0.12);
+}
+
+/* Reflection note */
+.reflection-note {
+    margin-top: 15px;
+    color: #94765e;
+    font-size: 13px;
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+    .reflection-section {
+        padding: 35px 18px;
+        margin-top: 35px;
+    }
+
+    .finale-heading {
+        gap: 10px;
+    }
+
+    .finale-line {
+        width: 25px;
+    }
+
+    .finale-message {
+        font-size: 16px;
+    }
+
+    .reflection-section textarea {
+        font-size: 15px;
+    }
+}
+
+
+
+
+/* ================================= */
+/* BE APART - QUIZ POLISH */
+/* ================================= */
+
+.innovator-quiz {
+    max-width: 1100px;
+    margin: 90px auto;
+    padding: 55px 40px;
+    background: linear-gradient(135deg, #fffaf4, #fff0df);
+    border: 1px solid #ffe0bd;
+    border-radius: 25px;
+    box-shadow: 0 12px 30px rgba(180, 95, 20, 0.07);
+}
+
+.innovator-quiz h2 {
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.quiz-intro {
+    max-width: 650px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+}
+
+/* Progress information */
+
+.quiz-progress {
+    max-width: 750px;
+    margin-bottom: 35px;
+}
+
+.quiz-progress-info {
+    font-size: 14px;
+}
+
+.quiz-progress-bar {
+    height: 12px;
+    background: #f8dfc6;
+}
+
+#quiz-progress-fill {
+    background: linear-gradient(90deg, #f8ad62, #e87518);
+}
+
+/* Question container */
+
+.quiz-container {
+    max-width: 850px;
+    padding: 40px;
+    background: white;
+    border: 1px solid #ffe0bd;
+    border-radius: 22px;
+    box-shadow: 0 8px 25px rgba(180, 95, 20, 0.08);
+}
+
+.quiz-container h3 {
+    font-size: 25px;
+    line-height: 1.5;
+}
+
+/* Answer cards */
+
+.quiz-answers {
+    gap: 20px;
+}
+
+.quiz-answer {
+    min-height: 115px;
+    padding: 22px;
+    border: 2px solid #f5e2d0;
+    border-radius: 18px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.quiz-answer:hover {
+    transform: translateY(-5px);
+    border-color: #f28c28;
+    box-shadow: 0 10px 22px rgba(180, 95, 20, 0.13);
+}
+
+.quiz-answer.selected {
+    background: #fff0df;
+    border-color: #e87518;
+    box-shadow: 0 0 0 3px rgba(232, 117, 24, 0.12);
+}
+
+.answer-icon {
+    font-size: 34px;
+}
+
+/* Next button */
+
+#innovator-next {
+    min-width: 190px;
+    padding: 15px 35px;
+    box-shadow: 0 5px 12px rgba(180, 95, 20, 0.15);
+}
+
+@media (max-width: 650px) {
+    .innovator-quiz {
+        margin: 55px 15px;
+        padding: 35px 15px;
+    }
+
+    .quiz-container {
+        padding: 25px 16px;
+    }
+
+    .quiz-container h3 {
+        font-size: 21px;
+    }
+
+    .quiz-answer {
+        min-height: 85px;
+    }
+}
+
+
+
+/* ================================= */
+/* BE APART - RESULTS POLISH */
+/* ================================= */
+
+.innovator-results {
+    max-width: 1100px;
+    margin: 90px auto;
+    padding: 55px 40px;
+}
+
+.innovator-results h2 {
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.results-intro {
+    max-width: 650px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+}
+
+.results-container {
+    gap: 28px;
+    align-items: stretch;
+}
+
+/* Individual result cards */
+
+.result-card {
+    border: 1px solid #ffe0bd;
+    border-radius: 22px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(180, 95, 20, 0.14);
+}
+
+/* Result images */
+
+.result-card img {
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.result-card:hover img {
+    transform: scale(1.03);
+}
+
+/* Result information */
+
+.result-card-content {
+    padding: 30px;
+}
+
+.result-card h3 {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 18px;
+}
+
+.result-card h4 {
+    font-size: 17px;
+    margin-top: 24px;
+    margin-bottom: 10px;
+}
+
+.result-card p {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Restart button */
+
+#restart-innovator-quiz {
+    min-width: 210px;
+    padding: 15px 35px;
+    box-shadow: 0 5px 12px rgba(180, 95, 20, 0.15);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#restart-innovator-quiz:hover {
+    background: #d96512;
+    transform: translateY(-3px);
+}
+
+/* Mobile layout */
+
+@media (max-width: 650px) {
+    .innovator-results {
+        margin: 55px 15px;
+        padding: 35px 15px;
+    }
+
+    .result-card img {
+        height: 220px;
+    }
+
+    .result-card-content {
+        padding: 22px;
+    }
+}
