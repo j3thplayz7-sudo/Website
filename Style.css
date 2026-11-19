@@ -2355,3 +2355,72 @@ body {
         padding: 22px;
     }
 }
+
+
+
+/* ================================= */
+/* HOME PAGE - UN SDG INTRODUCTION */
+/* ================================= */
+
+.sdg-introduction {
+    max-width: 1100px;
+    margin: 70px auto;
+    padding: 30px 45px;
+}
+
+/* Individual information sections */
+
+.sdg-info-section {
+    padding: 35px 10px;
+    text-align: left;
+}
+
+.sdg-info-section h2 {
+    color: #e87518;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.sdg-info-section p {
+    color: #70421f;
+    font-size: 17px;
+    line-height: 1.9;
+    margin: 0;
+}
+
+/* Horizontal dividers */
+
+.sdg-divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        #f28c28,
+        #ffdfc1,
+        transparent
+    );
+    margin: 5px 10px;
+}
+
+/* Mobile layout */
+
+@media (max-width: 650px) {
+    .sdg-introduction {
+        margin: 40px 15px;
+        padding: 15px 10px;
+    }
+
+    .sdg-info-section {
+        padding: 25px 5px;
+    }
+
+    .sdg-info-section h2 {
+        font-size: 23px;
+    }
+
+    .sdg-info-section p {
+        font-size: 15px;
+    }
+}
+
