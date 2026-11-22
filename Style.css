@@ -2685,3 +2685,209 @@ section img {
     margin-left: auto;
     margin-right: auto;
 }
+
+
+
+
+/* ============================= */
+/* CITY BUILDER GAME */
+/* ============================= */
+
+.city-builder {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8e8;
+    color: #2e4625;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 20px;
+    margin: 30px auto;
+}
+
+/* Game Header */
+
+.city-builder h1 {
+    color: #27632a;
+    margin-bottom: 10px;
+}
+
+.city-builder h2 {
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+.city-builder h3 {
+    color: #27632a;
+}
+
+/* Game Statistics */
+
+.city-builder .stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background-color: white;
+    border-radius: 15px;
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 850px;
+}
+
+.city-builder .stat-box {
+    background-color: #e8f5e9;
+    padding: 15px;
+    border-radius: 12px;
+    min-width: 120px;
+}
+
+.city-builder .stat-box h3 {
+    font-size: 15px;
+}
+
+.city-builder .stat-box h2 {
+    color: #2e7d32;
+}
+
+/* Happiness Bar */
+
+.city-builder .happiness-section {
+    max-width: 500px;
+    margin: 25px auto;
+}
+
+.city-builder .progress-bar {
+    width: 100%;
+    height: 25px;
+    background-color: #dddddd;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.city-builder #happiness-bar {
+    width: 50%;
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.3s;
+}
+
+/* Mission */
+
+.city-builder .mission {
+    background-color: #fff3cd;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.city-builder .mission p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Building Selection */
+
+.city-builder .buildings {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px;
+}
+
+/* Game Buttons */
+
+.city-builder button {
+    background-color: #ffcc66;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.city-builder button:hover {
+    background-color: orange;
+    transform: translateY(-2px);
+}
+
+.city-builder button.active {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* Game Map */
+
+.city-builder #game-map {
+    display: grid;
+    grid-template-columns: repeat(8, 45px);
+    gap: 3px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.city-builder .tile {
+    width: 45px;
+    height: 45px;
+    background-color: #a8d879;
+    border: 1px solid #6aa84f;
+    border-radius: 6px;
+    font-size: 25px;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.city-builder .tile:hover {
+    transform: scale(1.1);
+    background-color: #c8e6a0;
+}
+
+/* Game Messages */
+
+.city-builder #message {
+    font-size: 18px;
+    font-weight: bold;
+    color: #27632a;
+}
+
+/* Responsive Game Map */
+
+@media (max-width: 650px) {
+
+    .city-builder {
+        padding: 20px 8px;
+    }
+
+    .city-builder #game-map {
+        grid-template-columns: repeat(8, 10vw);
+        gap: 2px;
+    }
+
+    .city-builder .tile {
+        width: 10vw;
+        height: 10vw;
+        font-size: 20px;
+    }
+
+    .city-builder .stats {
+        gap: 10px;
+        padding: 8px;
+    }
+
+    .city-builder .stat-box {
+        min-width: 90px;
+        padding: 10px;
+    }
+
+    .city-builder .buildings {
+        margin: 10px 0;
+    }
+
+    .city-builder button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+}

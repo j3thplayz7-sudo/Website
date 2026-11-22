@@ -187,8 +187,108 @@
             <p class="facts-instruction">
                 Use the arrows to discover more facts!
             </p>
-
+            
         </section>
+
+
+        <!-- CITY BUILDER GAME -->
+        <section class="city-builder-section city-builder">
+
+            <h2>🏙️ Build Your Own Sustainable City!</h2>
+
+            <p>
+                Put your innovation skills to the test!
+                Build a city, manage your money, and keep your citizens happy
+                while creating a sustainable future.
+            </p> 
+
+            <!-- Game Information -->
+
+            <section class="stats">
+                <div class="stat-box">
+                    <h3>💰 Money</h3>
+                    <h2>$<span id="money">500</span></h2>
+                </div>
+
+                <div class="stat-box">
+                    <h3>😊 Happiness</h3>
+                    <h2><span id="happiness">50</span>%</h2>
+                </div>
+
+                <div class="stat-box">
+                    <h3>👥 Population</h3>
+                    <h2><span id="population">0</span></h2>
+                </div>
+
+                <div class="stat-box">
+                    <h3>⭐ Points</h3>
+                    <h2><span id="score">0</span></h2>
+                </div>
+            </section>
+
+      <!-- Happiness Bar -->
+      <section class="happiness-section">
+        <h3>City Happiness</h3>
+
+        <div class="progress-bar">
+          <div id="happiness-bar"></div>
+        </div>
+      </section>
+
+      <section class="mission">
+        <h2>🎯 Your Mission</h2>
+
+        <p>Build a happy and sustainable city!</p>
+
+        <p id="mission-happiness">❌ Reach 80% Happiness</p>
+        <p id="mission-population">❌ Reach 50 Population</p>
+        <p id="mission-hospital">❌ Build a Hospital</p>
+        <p id="mission-school">❌ Build a School</p>
+      </section>
+
+      <!-- Building Selection -->
+      <section>
+        
+        <h2>Choose a Building</h2>
+
+        <div class="buildings">
+          <button onclick="selectBuilding('house')">🏠 House ($50)</button>
+
+          <button onclick="selectBuilding('road')">🛣️ Road ($10)</button>
+
+          <button onclick="selectBuilding('hospital')">
+            🏥 Hospital ($150)
+          </button>
+
+          <button onclick="selectBuilding('school')">🏫 School ($100)</button>
+
+          <button onclick="selectBuilding('factory')">🏭 Factory ($120)</button>
+
+          <button onclick="selectBuilding('park')">🌳 Park ($30)</button>
+
+          <button onclick="selectBuilding('remove')">❌ Remove</button>
+        </div>
+    </section>
+
+      <!-- Selected Building -->
+      <p id="selected">Selected: House</p>
+
+      <!-- Game Map -->
+    <section>
+        <h2>Your City</h2>
+
+        <div id="game-map"></div>
+
+    </section>
+
+      <!-- Messages -->
+      <p id="message">Click a square to build!</p>
+
+
+      <!-- Reset Game -->  
+      <button onclick="resetGame()">🔄 Reset Game</button>
+    
+    </section> <!-- End City Builder Section -->
 
     </main>
 

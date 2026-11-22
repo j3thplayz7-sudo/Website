@@ -1105,3 +1105,267 @@ if (restartQuizButton) {
     });
 
 }
+
+
+
+let money = 500;
+let games_score = 0;
+let happiness = 50;
+let population = 0;
+let selectedBuilding = "house";
+
+// Information about each building
+
+const buildings = {
+    house: {
+        emoji: "🏠",
+        cost: 50,
+        points: 10,
+        happiness: 2,
+        population: 10,
+        income: 0,
+    },
+
+    road: {
+        emoji: "🛣️",
+        cost: 10,
+        points: 5,
+        happiness: 1,
+        population: 0,
+        income: 0,
+    },
+
+    hospital: {
+        emoji: "🏥",
+        cost: 150,
+        points: 30,
+        happiness: 15,
+        population: 0,
+        income: 0,
+    },
+
+    school: {
+        emoji: "🏫",
+        cost: 100,
+        points: 20,
+        happiness: 10,
+        population: 0,
+        income: 0,
+    },
+
+    factory: {
+        emoji: "🏭",
+        cost: 120,
+        points: 25,
+        happiness: -10,
+        population: 0,
+        income: 50,
+    },
+
+    park: {
+        emoji: "🌳",
+        cost: 30,
+        points: 10,
+        happiness: 8,
+        population: 0,
+        income: 0,
+    },
+};
+
+const gameMap = document.getElementById("game-map");
+
+// Create 64 tiles
+for (let i = 0; i < 64; i++) {
+    let tile = document.createElement("button");
+
+    tile.className = "tile";
+    tile.dataset.building = "";
+
+    tile.onclick = function () {
+        placeBuilding(tile);
+    };
+
+    gameMap.appendChild(tile);
+}
+
+function selectBuilding(building) {
+    selectedBuilding = building;
+
+    document.getElementById("selected").innerText =
+        "Selected: " + building;
+
+    // Highlight selected button
+    let buttons = document.querySelectorAll(".buildings button");
+
+    buttons.forEach(function (button) {
+        button.classList.remove("active");
+    });
+}
+
+function placeBuilding(tile) {
+
+    // Remove a building
+    if (selectedBuilding === "remove") {
+        let oldName = tile.dataset.building;
+
+        if (oldName === "") {
+            showMessage("Nothing to remove!");
+            return;
+        }
+
+        let old = buildings[oldName];
+
+        money += Math.floor(old.cost / 2);
+        games_score -= old.points;
+
+        tile.innerText = "";
+        tile.dataset.building = "";
+
+        recalculateCity();
+        updateStats();
+        checkMission();
+
+        showMessage("Building removed!");
+        return;
+    }
+
+    // Check if tile is occupied
+    if (tile.dataset.building !== "") {
+        showMessage("This square is occupied!");
+        return;
+    }
+
+    let building = buildings[selectedBuilding];
+
+    // Check if player has enough money
+    if (money < building.cost) {
+        showMessage("Not enough money!");
+        return;
+    }
+
+    // Spend money and receive income
+    money -= building.cost;
+    money += building.income;
+
+    // Add points
+    games_score += building.points;
+
+    // Place building
+    tile.innerText = building.emoji;
+    tile.dataset.building = selectedBuilding;
+
+    recalculateCity();
+    updateStats();
+    checkMission();
+
+    showMessage("You built a " + selectedBuilding + "!");
+}
+
+function updateStats() {
+    document.getElementById("money").innerText = money;
+    document.getElementById("score").innerText = games_score;
+
+    document.getElementById("happiness").innerText = happiness;
+    document.getElementById("population").innerText = population;
+
+    // Update happiness progress bar
+    let bar = document.getElementById("happiness-bar");
+
+    bar.style.width = happiness + "%";
+
+    if (happiness >= 80) {
+        bar.style.backgroundColor = "#4caf50";
+    } else if (happiness >= 40) {
+        bar.style.backgroundColor = "#ff9800";
+    } else {
+        bar.style.backgroundColor = "#f44336";
+    }
+}
+
+function showMessage(text) {
+    document.getElementById("message").innerText = text;
+}
+
+function resetGame() {
+    money = 500;
+    games_score = 0;
+    happiness = 50;
+    population = 0;
+    selectedBuilding = "house";
+
+    let tiles = document.querySelectorAll(".tile");
+
+    tiles.forEach(function (tile) {
+        tile.innerText = "";
+        tile.dataset.building = "";
+    });
+
+    updateStats();
+    checkMission();
+
+    document.getElementById("selected").innerText =
+        "Selected: house";
+
+    showMessage("Game restarted!");
+}
+
+function recalculateCity() {
+    happiness = 50;
+    population = 0;
+
+    let tiles = document.querySelectorAll(".tile");
+
+    tiles.forEach(function (tile) {
+        let name = tile.dataset.building;
+
+        if (name !== "") {
+            happiness += buildings[name].happiness;
+            population += buildings[name].population;
+        }
+    });
+
+    // Keep happiness between 0 and 100
+    happiness = Math.max(0, Math.min(100, happiness));
+}
+
+function checkMission() {
+    let hasHospital = false;
+    let hasSchool = false;
+
+    let tiles = document.querySelectorAll(".tile");
+
+    tiles.forEach(function (tile) {
+        if (tile.dataset.building === "hospital") {
+            hasHospital = true;
+        }
+
+        if (tile.dataset.building === "school") {
+            hasSchool = true;
+        }
+    });
+
+    // Update mission checklist
+    document.getElementById("mission-happiness").innerText =
+        (happiness >= 80 ? "✅" : "❌") +
+        " Reach 80% Happiness";
+
+    document.getElementById("mission-population").innerText =
+        (population >= 50 ? "✅" : "❌") +
+        " Reach 50 Population";
+
+    document.getElementById("mission-hospital").innerText =
+        (hasHospital ? "✅" : "❌") +
+        " Build a Hospital";
+
+    document.getElementById("mission-school").innerText =
+        (hasSchool ? "✅" : "❌") +
+        " Build a School";
+
+    // Winning condition
+    if (happiness >= 80 && population >= 50 &&
+        hasHospital && hasSchool) {
+
+        showMessage("🎉 Congratulations! Your city is thriving!");
+    }
+}
+
