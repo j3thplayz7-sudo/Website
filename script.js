@@ -1117,31 +1117,62 @@ let selectedBuilding = "house";
 // Information about each building
 
 const buildings = {
+
+    // RESIDENTIAL
     house: {
         emoji: "🏠",
         cost: 50,
         points: 10,
         happiness: 2,
         population: 10,
-        income: 0,
+        income: 0
     },
 
+    // TRANSPORTATION
     road: {
         emoji: "🛣️",
         cost: 10,
         points: 5,
         happiness: 1,
         population: 0,
-        income: 0,
+        income: 0
     },
 
+    port: {
+        emoji: "⚓",
+        cost: 200,
+        points: 40,
+        happiness: 4,
+        population: 0,
+        income: 80
+    },
+
+    airport: {
+        emoji: "✈️",
+        cost: 300,
+        points: 60,
+        happiness: 8,
+        population: 0,
+        income: 120
+    },
+
+    trainStation: {
+        emoji: "🚉",
+        cost: 150,
+        points: 30,
+        happiness: 8,
+        population: 0,
+        income: 30
+    },
+
+    // PUBLIC SERVICES
     hospital: {
         emoji: "🏥",
         cost: 150,
         points: 30,
         happiness: 15,
         population: 0,
-        income: 0,
+        income: 0
     },
 
     school: {
@@ -1150,16 +1181,7 @@ const buildings = {
         points: 20,
         happiness: 10,
         population: 0,
-        income: 0,
-    },
-
-    factory: {
-        emoji: "🏭",
-        cost: 120,
-        points: 25,
-        happiness: -10,
-        population: 0,
-        income: 50,
+        income: 0
     },
 
     park: {
@@ -1168,8 +1190,46 @@ const buildings = {
         points: 10,
         happiness: 8,
         population: 0,
-        income: 0,
+        income: 0
     },
+
+    // INDUSTRY & ENERGY
+    factory: {
+        emoji: "🏭",
+        cost: 120,
+        points: 25,
+        happiness: -10,
+        population: 0,
+        income: 50
+    },
+
+    powerPlant: {
+        emoji: "⚡",
+        cost: 200,
+        points: 40,
+        happiness: -5,
+        population: 0,
+        income: 70
+    },
+
+    // COMMERCE
+    mall: {
+        emoji: "🛍️",
+        cost: 180,
+        points: 35,
+        happiness: 10,
+        population: 5,
+        income: 60
+    },
+
+    office: {
+        emoji: "🏢",
+        cost: 120,
+        points: 25,
+        happiness: 5,
+        population: 10,
+        income: 40
+    }
 };
 
 const gameMap = document.getElementById("game-map");
@@ -1189,18 +1249,49 @@ for (let i = 0; i < 64; i++) {
 }
 
 function selectBuilding(building) {
+
     selectedBuilding = building;
 
     document.getElementById("selected").innerText =
         "Selected: " + building;
 
-    // Highlight selected button
     let buttons = document.querySelectorAll(".buildings button");
 
-    buttons.forEach(function (button) {
+    buttons.forEach(function(button) {
         button.classList.remove("active");
     });
+
+    // Highlight the selected building
+    let selectedButton = document.querySelector(
+        `.buildings button[onclick="selectBuilding('${building}')"]`
+    );
+
+    if (selectedButton) {
+        selectedButton.classList.add("active");
+    }
+
+    showBuildingInfo(building);
+
 }
+
+function showBuildingInfo(buildingName) {
+
+    let building = buildings[buildingName];
+
+    if (!building) return;
+
+    let info = document.getElementById("building-info");
+
+    info.innerHTML = `
+        <h3>${buildingName}</h3>
+        <p>💰 Cost: $${building.cost}</p>
+        <p>⭐ Points: +${building.points}</p>
+        <p>😊 Happiness: ${building.happiness > 0 ? "+" : ""}${building.happiness}</p>
+        <p>👥 Population: +${building.population}</p>
+        <p>💵 Income: +$${building.income}</p>
+    `;
+}
+
 
 function placeBuilding(tile) {
 

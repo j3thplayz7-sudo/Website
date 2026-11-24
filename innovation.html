@@ -252,22 +252,58 @@
         <h2>Choose a Building</h2>
 
         <div class="buildings">
-          <button onclick="selectBuilding('house')">🏠 House ($50)</button>
 
-          <button onclick="selectBuilding('road')">🛣️ Road ($10)</button>
-
-          <button onclick="selectBuilding('hospital')">
-            🏥 Hospital ($150)
-          </button>
-
-          <button onclick="selectBuilding('school')">🏫 School ($100)</button>
-
-          <button onclick="selectBuilding('factory')">🏭 Factory ($120)</button>
-
-          <button onclick="selectBuilding('park')">🌳 Park ($30)</button>
-
-          <button onclick="selectBuilding('remove')">❌ Remove</button>
+        <!-- RESIDENTIAL -->
+        <div class="building-category">
+            <h3>🏠 Residential</h3>
+            <button onclick="selectBuilding('house')">🏠 House</button>
         </div>
+
+        <!-- TRANSPORTATION -->
+        <div class="building-category">
+            <h3>🚆 Transportation</h3>
+            <button onclick="selectBuilding('road')">🛣️ Road</button>
+            <button onclick="selectBuilding('port')">⚓ Port</button>
+            <button onclick="selectBuilding('airport')">✈️ Airport</button>
+            <button onclick="selectBuilding('trainStation')">🚉 Train Station</button>
+    </div>
+
+    <!-- PUBLIC SERVICES -->
+    <div class="building-category">
+        <h3>🏥 Public Services</h3>
+        <button onclick="selectBuilding('hospital')">🏥 Hospital</button>
+        <button onclick="selectBuilding('school')">🏫 School</button>
+        <button onclick="selectBuilding('park')">🌳 Park</button>
+    </div>
+
+    <!-- INDUSTRY AND ENERGY -->
+    <div class="building-category">
+        <h3>🏭 Industry & Energy</h3>
+        <button onclick="selectBuilding('factory')">🏭 Factory</button>
+        <button onclick="selectBuilding('powerPlant')">⚡ Power Plant</button>
+    </div>
+
+    <!-- COMMERCE -->
+    <div class="building-category">
+        <h3>🏢 Commerce</h3>
+        <button onclick="selectBuilding('mall')">🛍️ Mall</button>
+        <button onclick="selectBuilding('office')">🏢 Office</button>
+    </div>
+
+    <!-- OTHER -->
+    <div class="building-category">
+        <h3>🧹 Other</h3>
+        <button onclick="selectBuilding('remove')">❌ Remove Building</button>
+    </div>
+
+    <div id="building-info">
+        <p>Select a building to view its information.</p>
+    </div>
+
+
+</div>
+        
+
     </section>
 
       <!-- Selected Building -->

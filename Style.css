@@ -2891,3 +2891,56 @@ section img {
     }
 
 }
+
+
+/* Building Categories */
+.city-builder .building-category {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: rgb(192, 219, 195);
+    padding: 18px;
+    margin: 10px auto;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+/* Category Headings */
+.city-builder .building-category h3 {
+    width: 100%;
+    margin: 0 0 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e8f5e9;
+    color: #408f44;
+}
+
+/* Category Buttons */
+.city-builder .building-category button {
+    min-width: 140px;
+}
+
+
+/* Building Information Panel */
+.city-builder #building-info {
+    background: white;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 6px solid #4caf50;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.city-builder #building-info h3 {
+    color: #2e7d32;
+    margin-bottom: 12px;
+    text-transform: capitalize;
+}
+
+.city-builder #building-info p {
+    margin: 8px 0;
+    font-size: 15px;
+}
