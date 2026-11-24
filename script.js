@@ -1244,14 +1244,24 @@ const buildings = {
     }
 };
 
+// Create City Map
 const gameMap = document.getElementById("game-map");
 
-// Create 64 tiles
+const waterTiles = [56, 57, 58, 59, 60, 61, 62, 63];
+
 for (let i = 0; i < 64; i++) {
+
     let tile = document.createElement("button");
 
     tile.className = "tile";
     tile.dataset.building = "";
+    tile.dataset.terrain = "grass";
+
+    // Add water terrain
+    if (waterTiles.includes(i)) {
+        tile.classList.add("terrain-water");
+        tile.dataset.terrain = "water";
+    }
 
     tile.onclick = function () {
         placeBuilding(tile);
@@ -1339,6 +1349,26 @@ function placeBuilding(tile) {
         return;
     }
 
+
+    // Prevent building on water
+    if (tile.dataset.terrain === "water") {
+        showMessage("You cannot build on water!");
+        return;
+    }
+
+    // Prevent buildings on reserved road tiles
+    if (tile.dataset.terrain === "road" && selectedBuilding !== "road") {
+        showMessage("This tile is reserved for roads!");
+        return;
+    }
+
+    // Allow roads to be placed on road terrain
+    if (tile.dataset.terrain === "road" && selectedBuilding === "road") {
+        showMessage("This is already a road tile!");
+        return;
+    }
+    
+    
     // Check if tile is occupied
     if (tile.dataset.building !== "") {
         showMessage("This square is occupied!");
@@ -1390,7 +1420,44 @@ function updateStats() {
     } else {
         bar.style.backgroundColor = "#f44336";
     }
+
+    updateBuildingButtons();
 }
+
+
+function updateBuildingButtons() {
+
+    let buttons = document.querySelectorAll(
+        ".building-category button[onclick^='selectBuilding']"
+    );
+
+    buttons.forEach(function(button) {
+
+        let match = button.getAttribute("onclick").match(/selectBuilding\('(.+)'\)/);
+
+        if (!match) return;
+
+        let buildingName = match[1];
+
+        if (buildingName === "remove") {
+            button.classList.remove("unaffordable");
+            return;
+        }
+
+        let building = buildings[buildingName];
+
+        if (!building) return;
+
+        if (money < building.cost) {
+            button.classList.add("unaffordable");
+        }
+        else {
+            button.classList.remove("unaffordable");
+        }
+
+    });
+}
+
 
 function showMessage(text) {
     document.getElementById("message").innerText = text;
