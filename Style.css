@@ -2944,3 +2944,11 @@ section img {
     margin: 8px 0;
     font-size: 15px;
 }
+
+/* Building Descriptions */
+.city-builder .building-description {
+    color: #555;
+    line-height: 1.6;
+    font-size: 14px;
+    margin: 12px 0;
+}

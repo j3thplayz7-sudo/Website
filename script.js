@@ -1120,17 +1120,19 @@ const buildings = {
 
     // RESIDENTIAL
     house: {
-        emoji: "🏠",
-        cost: 50,
-        points: 10,
-        happiness: 2,
-        population: 10,
-        income: 0
+    emoji: "🏠",
+    description: "Provides homes for residents and increases population.",
+    cost: 50,
+    points: 10,
+    happiness: 2,
+    population: 10,
+    income: 0
     },
 
     // TRANSPORTATION
     road: {
         emoji: "🛣️",
+        description: "Connects buildings and supports city transportation.",
         cost: 10,
         points: 5,
         happiness: 1,
@@ -1140,6 +1142,7 @@ const buildings = {
 
     port: {
         emoji: "⚓",
+        description: "Supports maritime trade and the movement of goods.",
         cost: 200,
         points: 40,
         happiness: 4,
@@ -1149,6 +1152,7 @@ const buildings = {
 
     airport: {
         emoji: "✈️",
+        description: "Connects your city to international destinations.",
         cost: 300,
         points: 60,
         happiness: 8,
@@ -1158,6 +1162,7 @@ const buildings = {
 
     trainStation: {
         emoji: "🚉",
+        description: "Improves public transportation and city connectivity.",
         cost: 150,
         points: 30,
         happiness: 8,
@@ -1168,6 +1173,7 @@ const buildings = {
     // PUBLIC SERVICES
     hospital: {
         emoji: "🏥",
+        description: "Provides healthcare and improves citizens' well-being.",
         cost: 150,
         points: 30,
         happiness: 15,
@@ -1177,6 +1183,7 @@ const buildings = {
 
     school: {
         emoji: "🏫",
+        description: "Provides education and supports the future workforce.",
         cost: 100,
         points: 20,
         happiness: 10,
@@ -1186,6 +1193,7 @@ const buildings = {
 
     park: {
         emoji: "🌳",
+        description: "Creates green spaces and improves city happiness.",
         cost: 30,
         points: 10,
         happiness: 8,
@@ -1196,6 +1204,7 @@ const buildings = {
     // INDUSTRY & ENERGY
     factory: {
         emoji: "🏭",
+        description: "Produces goods and generates money for the city.",
         cost: 120,
         points: 25,
         happiness: -10,
@@ -1205,6 +1214,7 @@ const buildings = {
 
     powerPlant: {
         emoji: "⚡",
+        description: "Supplies energy to support city development.",
         cost: 200,
         points: 40,
         happiness: -5,
@@ -1215,6 +1225,7 @@ const buildings = {
     // COMMERCE
     mall: {
         emoji: "🛍️",
+        description: "Provides shopping and entertainment for residents.",
         cost: 180,
         points: 35,
         happiness: 10,
@@ -1224,6 +1235,7 @@ const buildings = {
 
     office: {
         emoji: "🏢",
+        description: "Supports businesses and creates employment opportunities.",
         cost: 120,
         points: 25,
         happiness: 5,
@@ -1283,12 +1295,19 @@ function showBuildingInfo(buildingName) {
     let info = document.getElementById("building-info");
 
     info.innerHTML = `
-        <h3>${buildingName}</h3>
+        <h3>${building.emoji} ${buildingName}</h3>
+
+        <p class="building-description">
+            ${building.description}
+        </p>
+
+        <hr>
+
         <p>💰 Cost: $${building.cost}</p>
         <p>⭐ Points: +${building.points}</p>
         <p>😊 Happiness: ${building.happiness > 0 ? "+" : ""}${building.happiness}</p>
         <p>👥 Population: +${building.population}</p>
-        <p>💵 Income: +$${building.income}</p>
+        <p>💵 Money earned: +$${building.income}</p>
     `;
 }
 
