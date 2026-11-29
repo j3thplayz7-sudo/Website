@@ -751,3 +751,222 @@ body {
     }
 
 }
+
+
+
+/* ================================= */
+/* PHONE RESPONSIVE IMPROVEMENTS */
+/* ================================= */
+
+@media (max-width: 600px) {
+
+    /* Innovation Hero */
+    .innovation-hero {
+        padding: 45px 20px;
+        gap: 25px;
+    }
+
+    .innovation-content h1 {
+        font-size: 36px;
+    }
+
+    .innovation-label {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .innovation-description {
+        font-size: 17px;
+    }
+
+    .innovation-image {
+        max-width: 100%;
+    }
+
+    /* Innovation Quiz */
+    .quiz-section {
+        padding: 45px 15px;
+    }
+
+    .quiz-section h2 {
+        font-size: 30px;
+    }
+
+    .quiz-box {
+        padding: 25px 18px;
+    }
+
+    .quiz-box h3 {
+        font-size: 19px;
+    }
+
+    .answer-button {
+        font-size: 15px;
+        padding: 13px;
+    }
+
+    /* Did You Know */
+    .facts-section {
+        padding: 45px 12px;
+    }
+
+    .facts-section h2 {
+        font-size: 30px;
+    }
+
+    .facts-subtitle {
+        font-size: 15px;
+    }
+
+    .facts-container {
+        max-width: 320px;
+    }
+
+    .fact-card {
+        min-height: 280px;
+        padding: 18px;
+    }
+
+    /* City Builder */
+    .city-builder {
+        width: 100%;
+        padding: 20px 10px;
+    }
+
+    .city-builder #game-map {
+        width: 100%;
+        max-width: 420px;
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+        gap: 3px;
+    }
+
+    .city-builder .tile {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        font-size: clamp(14px, 4vw, 20px);
+    }
+
+    .city-builder .building-category {
+        padding: 12px 8px;
+        gap: 8px;
+    }
+
+    .city-builder .building-category button {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+}
+
+
+/* ================================= */
+/* LARGE MONITOR IMPROVEMENTS */
+/* ================================= */
+
+@media (min-width: 1600px) {
+
+    /* Innovation Hero */
+    .innovation-hero {
+        padding: 85px 7%;
+        gap: 75px;
+    }
+
+    .innovation-content {
+        max-width: 800px;
+    }
+
+    .innovation-label {
+        font-size: 18px;
+    }
+
+    .innovation-content h1 {
+        font-size: clamp(72px, 5vw, 96px);
+    }
+
+    .innovation-description {
+        font-size: 24px;
+    }
+
+    .innovation-image {
+        max-width: 780px;
+    }
+
+    /* Quiz */
+    .quiz-section {
+        padding: 90px 10%;
+    }
+
+    .quiz-section h2 {
+        font-size: 50px;
+    }
+
+    .quiz-box {
+        max-width: 900px;
+        padding: 55px;
+    }
+
+    .quiz-box h3 {
+        font-size: 27px;
+    }
+
+    .answer-button {
+        font-size: 19px;
+        padding: 20px;
+    }
+
+    /* Did You Know */
+    .facts-section {
+        padding: 90px 7%;
+    }
+
+    .facts-section h2 {
+        font-size: 50px;
+    }
+
+    .facts-subtitle {
+        font-size: 20px;
+    }
+
+    .facts-container {
+        max-width: 1500px;
+        gap: 35px;
+    }
+
+    .fact-card {
+        min-height: 350px;
+        padding: 30px;
+    }
+
+    .fact-card h3 {
+        font-size: 25px;
+    }
+
+    .fact-card p {
+        font-size: 18px;
+    }
+
+    /* City Builder */
+    .city-builder {
+        max-width: 1800px;
+        margin: 50px auto;
+        padding: 55px 40px;
+    }
+
+    .city-builder #game-map {
+        grid-template-columns: repeat(8, 60px);
+        gap: 5px;
+    }
+
+    .city-builder .tile {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+    }
+
+    .city-builder .stat-box {
+        min-width: 150px;
+        padding: 20px;
+    }
+
+}

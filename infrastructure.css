@@ -462,3 +462,123 @@ body {
     }
 
 }
+
+
+/* ================================= */
+/* LARGE MONITOR RESPONSIVE DESIGN */
+/* ================================= */
+
+@media (min-width: 1600px) {
+
+    .infrastructure-hero {
+        min-height: 60vh;
+        padding: 70px 7%;
+        gap: 70px;
+    }
+
+    .infrastructure-content h1 {
+        font-size: clamp(70px, 4vw, 90px);
+    }
+
+    .infrastructure-image {
+        max-width: 750px;
+    }
+
+    .infrastructure-image img {
+        height: 500px;
+    }
+
+    .infrastructure-quiz,
+    .city-section {
+        padding: 80px 8%;
+    }
+
+    .infrastructure-questions {
+        max-width: 1250px;
+        gap: 30px;
+    }
+
+    .city-scene {
+        max-width: 1200px;
+        height: 520px;
+    }
+
+}
+
+
+/* ================================= */
+/* EXTRA PHONE RESPONSIVE DESIGN */
+/* ================================= */
+
+@media (max-width: 600px) {
+
+    .infrastructure-hero {
+        padding: 45px 20px;
+        gap: 30px;
+    }
+
+    .infrastructure-content h1 {
+        font-size: clamp(34px, 9vw, 46px);
+    }
+
+    .infrastructure-subtitle {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+    .infrastructure-image img {
+        height: auto;
+        max-height: 300px;
+    }
+
+    .infrastructure-quiz,
+    .city-section {
+        padding: 45px 15px;
+    }
+
+    .infrastructure-questions {
+        gap: 15px;
+    }
+
+    .infra-question {
+        padding: 20px 15px;
+    }
+
+    .city-description {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .city-scene {
+        width: 100%;
+        height: 340px;
+    }
+
+    .city-info {
+        padding: 18px;
+    }
+
+    .city-info h3 {
+        font-size: 21px;
+    }
+
+    .city-info p {
+        font-size: 15px;
+    }
+
+}
+
+/* Fix Overlapping City Buttons on Phones */
+@media (max-width: 600px) {
+
+    .road-item {
+        left: 38%;
+        top: 25%;
+    }
+
+    .airport-item {
+        right: 42%;
+        top: 55%;
+    }
+
+}

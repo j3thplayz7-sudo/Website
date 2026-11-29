@@ -198,3 +198,62 @@ body {
     }
 
 }
+
+
+/* ================================= */
+/* LARGE MONITOR RESPONSIVE DESIGN */
+/* ================================= */
+
+@media (min-width: 1600px) {
+
+    /* Homepage Hero */
+    .hero {
+        padding: 80px 7%;
+        gap: 70px;
+    }
+
+    .hero-content {
+        max-width: 800px;
+    }
+
+    .goal-label {
+        font-size: 18px;
+    }
+
+    .hero h1 {
+        font-size: clamp(72px, 5vw, 96px);
+    }
+
+    .hero-description {
+        font-size: 23px;
+    }
+
+    .hero-button {
+        font-size: 19px;
+        padding: 19px 30px;
+    }
+
+    /* Hero Image */
+    .hero-image {
+        max-width: 780px;
+    }
+
+    .hero-image img {
+        height: 520px;
+    }
+
+    /* SDG Introduction */
+    .sdg-introduction {
+        max-width: 1400px;
+        padding: 40px 60px;
+    }
+
+    .sdg-info-section h2 {
+        font-size: 32px;
+    }
+
+    .sdg-info-section p {
+        font-size: 19px;
+    }
+
+}

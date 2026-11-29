@@ -41,3 +41,32 @@
 .nav-links a:hover {
     color: #333;
 }
+
+
+/* Phone Navigation */
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;
+        padding: 15px 15px;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        text-align: center;
+    }
+
+}

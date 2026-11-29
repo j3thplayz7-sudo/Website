@@ -112,6 +112,20 @@ body {
 }
 
 
+
+/* Prevent Flip Cards From Overflowing */
+.flip-card,
+.flip-card-inner,
+.card-front,
+.card-back {
+    box-sizing: border-box;
+}
+
+.flip-card {
+    min-width: 0;
+}
+
+
 /* FRONT AND BACK */
 
 .card-front,
@@ -382,4 +396,162 @@ body {
     #guess-options button {
         font-size: 15px;
     }
+}
+
+
+/* ================================= */
+/* PHONE RESPONSIVE IMPROVEMENTS */
+/* ================================= */
+
+@media (max-width: 600px) {
+
+    /* Hero Section */
+    .future-hero {
+        padding: 45px 20px;
+        gap: 30px;
+    }
+
+    .future-content h1 {
+        font-size: 36px;
+    }
+
+    .future-label {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .future-image img {
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
+
+    /* Key Innovations */
+    .innovations {
+        padding: 45px 20px;
+    }
+
+    .innovations h2 {
+        font-size: 30px;
+    }
+
+    .innovation-subtitle {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    .flip-card {
+        height: 280px;
+    }
+
+    .card-back p {
+        font-size: 15px;
+    }
+
+    /* Guess the Innovation Quiz */
+    .guess-innovation {
+        padding: 45px 20px;
+    }
+
+    .guess-container {
+        width: 100%;
+        padding: 25px 18px;
+    }
+
+}
+
+
+/* ================================= */
+/* LARGE MONITOR IMPROVEMENTS */
+/* ================================= */
+
+@media (min-width: 1600px) {
+
+    /* Hero Section */
+    .future-hero {
+        padding: 80px 7%;
+        gap: 70px;
+    }
+
+    .future-content {
+        max-width: 800px;
+    }
+
+    .future-label {
+        font-size: 18px;
+    }
+
+    .future-content h1 {
+        font-size: clamp(70px, 5vw, 92px);
+    }
+
+    .future-image {
+        max-width: 780px;
+    }
+
+    .future-image img {
+        height: 520px;
+    }
+
+    /* Key Innovations */
+    .innovations {
+        padding: 90px 7%;
+    }
+
+    .innovations h2 {
+        font-size: 50px;
+    }
+
+    .innovation-subtitle {
+        font-size: 20px;
+    }
+
+    .card-container {
+        max-width: 1700px;
+        margin: 0 auto;
+        gap: 35px;
+    }
+
+    .flip-card {
+        height: 340px;
+    }
+
+    .card-front h3 {
+        font-size: 27px;
+    }
+
+    .card-back p {
+        font-size: 18px;
+    }
+
+    /* Quiz */
+    .guess-innovation {
+        padding: 90px 10%;
+    }
+
+    .guess-innovation h2 {
+        font-size: 46px;
+    }
+
+    .guess-container {
+        max-width: 850px;
+        padding: 55px;
+    }
+
+    #guess-question {
+        font-size: 26px;
+    }
+
+    #guess-options button {
+        font-size: 19px;
+        padding: 18px 24px;
+    }
+
 }

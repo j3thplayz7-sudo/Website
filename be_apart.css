@@ -818,3 +818,279 @@ body {
         padding: 22px;
     }
 }
+
+/* ================================= */
+/* BE APART - PHONE IMPROVEMENTS */
+/* ================================= */
+
+@media (max-width: 600px) {
+
+    /* Prevent sections from overflowing */
+    .future-timeline,
+    .innovator-quiz,
+    .innovator-results {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    /* Hero */
+    .be-apart-hero {
+        padding: 65px 18px 55px;
+    }
+
+    .be-apart-hero h1 {
+        font-size: clamp(30px, 8vw, 38px);
+    }
+
+    .be-apart-hero p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    /* Timeline */
+    .future-timeline h2 {
+        font-size: 28px;
+    }
+
+    .timeline-intro {
+        font-size: 15px;
+        margin-bottom: 40px;
+    }
+
+    .timeline-item {
+        font-size: 11px;
+        gap: 10px;
+    }
+
+    .timeline-dot {
+        width: 16px;
+        height: 16px;
+    }
+
+    .timeline-content {
+        padding: 20px 14px;
+    }
+
+    .timeline-image {
+        height: 190px;
+    }
+
+    .timeline-image.final-image {
+        height: 230px;
+    }
+
+    .timeline-content > p {
+        font-size: 15px;
+    }
+
+    /* Reflection */
+    .reflection-section {
+        padding: 30px 15px;
+    }
+
+    .reflection-section h2 {
+        font-size: 24px;
+    }
+
+    .finale-heading {
+        gap: 8px;
+    }
+
+    .finale-line {
+        width: 18px;
+    }
+
+    /* Quiz */
+    .quiz-container h3 {
+        font-size: 19px;
+    }
+
+    .quiz-answer {
+        padding: 18px 15px;
+        font-size: 15px;
+    }
+
+    .answer-icon {
+        font-size: 28px;
+    }
+
+    #innovator-next,
+    #restart-innovator-quiz {
+        max-width: 100%;
+        min-width: 0;
+        padding: 14px 25px;
+    }
+
+    /* Quiz Results */
+    .result-card img {
+        height: 200px;
+    }
+
+    .result-card-content {
+        padding: 20px;
+    }
+}
+
+
+/* ================================= */
+/* BE APART - LARGE MONITORS */
+/* ================================= */
+
+@media (min-width: 1600px) {
+
+    /* Hero */
+    .be-apart-hero {
+        padding: 130px 8% 110px;
+    }
+
+    .be-apart-hero h1 {
+        font-size: clamp(65px, 4.5vw, 90px);
+    }
+
+    .be-apart-hero p {
+        max-width: 850px;
+        font-size: 23px;
+    }
+
+    /* Timeline */
+    .future-timeline {
+        width: 90%;
+        max-width: 1700px;
+        box-sizing: border-box;
+        padding: 90px 7%;
+    }
+
+    .future-timeline h2 {
+        font-size: 44px;
+    }
+
+    .timeline-intro {
+        max-width: 900px;
+        font-size: 20px;
+    }
+
+    .timeline {
+        max-width: 1350px;
+        margin-bottom: 75px;
+    }
+
+    .timeline-item {
+        font-size: 20px;
+        gap: 20px;
+    }
+
+    .timeline-dot {
+        width: 30px;
+        height: 30px;
+    }
+
+    .timeline::before {
+        top: 22px;
+        height: 6px;
+    }
+
+    .timeline-content {
+        max-width: 1100px;
+        padding: 55px;
+    }
+
+    .timeline-content h3 {
+        font-size: 38px;
+    }
+
+    .timeline-image {
+        height: 420px;
+    }
+
+    .timeline-image.final-image {
+        height: 520px;
+    }
+
+    .timeline-content > p {
+        max-width: 850px;
+        font-size: 20px;
+    }
+
+    /* Reflection */
+    .reflection-section {
+        padding: 65px 50px;
+    }
+
+    .finale-heading h2 {
+        font-size: 36px;
+    }
+
+    .finale-message {
+        font-size: 22px;
+    }
+
+    .reflection-section textarea {
+        max-width: 850px;
+        font-size: 18px;
+    }
+
+    /* Innovator Quiz */
+    .innovator-quiz {
+        max-width: 1400px;
+        padding: 75px 60px;
+    }
+
+    .innovator-quiz h2,
+    .innovator-results h2 {
+        font-size: 44px;
+    }
+
+    .quiz-intro,
+    .results-intro {
+        max-width: 850px;
+        font-size: 20px;
+    }
+
+    .quiz-container {
+        max-width: 1050px;
+        padding: 55px;
+    }
+
+    .quiz-container h3 {
+        font-size: 30px;
+    }
+
+    .quiz-answers {
+        gap: 25px;
+    }
+
+    .quiz-answer {
+        min-height: 135px;
+        padding: 28px;
+        font-size: 19px;
+    }
+
+    .answer-icon {
+        font-size: 40px;
+    }
+
+    /* Results */
+    .innovator-results {
+        max-width: 1400px;
+    }
+
+    .results-container {
+        gap: 35px;
+    }
+
+    .result-card img {
+        height: 320px;
+    }
+
+    .result-card-content {
+        padding: 38px;
+    }
+
+    .result-card h3 {
+        font-size: 28px;
+    }
+
+    .result-card p {
+        font-size: 17px;
+    }
+}
