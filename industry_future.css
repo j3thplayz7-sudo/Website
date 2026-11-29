@@ -1,0 +1,379 @@
+
+/* ================================= */
+/* FUTURE OF INDUSTRY HERO */
+/* ================================= */
+
+.future-hero {
+    min-height: 65vh;
+    background: linear-gradient(135deg, #fff7ed, #ffdfbd);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 60px 5%;
+    gap: 40px;
+}
+
+.future-content {
+    flex: 1;
+}
+
+.future-label {
+    color: #d96b13;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.future-content h1 {
+    color: #e87518;
+    font-size: clamp(38px, 5vw, 70px);
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.future-image {
+    flex: 1;
+}
+
+.future-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+
+/* ================================= */
+/* KEY INNOVATIONS SECTION */
+/* ================================= */
+
+.innovations {
+    background-color: #fffaf4;
+    padding: 65px 5%;
+    text-align: center;
+}
+
+.innovations h2 {
+    color: #e87518;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.innovation-subtitle {
+    color: #666;
+    font-size: 17px;
+    margin-bottom: 45px;
+}
+
+
+/* ================================= */
+/* CARD LAYOUT */
+/* ================================= */
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+
+/* ================================= */
+/* FLIP CARDS */
+/* ================================= */
+
+.flip-card {
+    background-color: transparent;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* FRONT AND BACK */
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    border-radius: 18px;
+    border: 2px solid #f58220;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+}
+
+
+/* FRONT DESIGN */
+
+.card-front {
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #ffe4c9
+    );
+
+    color: #333;
+}
+
+.card-icon {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.card-front h3 {
+    color: #e87518;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.card-front p {
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* BACK DESIGN */
+
+.card-back {
+    background: linear-gradient(
+        145deg,
+        #f58220,
+        #d96b13
+    );
+
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.card-back h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.card-back p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* HOVER EFFECT */
+
+.flip-card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+
+/* ================================= */
+/* RESPONSIVE DESIGN */
+/* ================================= */
+
+@media (max-width: 1000px) {
+
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .future-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .future-image {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .innovations h2 {
+        font-size: 32px;
+    }
+
+}
+
+
+/* ============================= */
+/* GUESS THE INNOVATION QUIZ */
+/* ============================= */
+
+.guess-innovation {
+    padding: 70px 10%;
+    text-align: center;
+    background-color: #fff8ef;
+}
+
+.guess-innovation h2 {
+    font-size: 36px;
+    color: #e87524;
+    margin-bottom: 15px;
+}
+
+.guess-subtitle {
+    font-size: 17px;
+    color: #555;
+    max-width: 650px;
+    margin: 0 auto 35px;
+    line-height: 1.6;
+}
+
+/* Quiz Container */
+.guess-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Question Progress */
+#guess-progress {
+    color: #e87524;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+/* Quiz Image / Emoji */
+#guess-image {
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+/* Quiz Question */
+#guess-question {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* Answer Buttons */
+#guess-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#guess-options button {
+    padding: 15px 20px;
+    border: 2px solid #f0a36c;
+    border-radius: 10px;
+    background-color: white;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#guess-options button:hover:not(:disabled) {
+    background-color: #fff0e2;
+    border-color: #e87524;
+    transform: translateY(-2px);
+}
+
+/* Correct and Wrong Answers */
+#guess-options button.correct {
+    background-color: #d9f2df;
+    border-color: #4caf50;
+    color: #27632a;
+}
+
+#guess-options button.wrong {
+    background-color: #ffe0e0;
+    border-color: #e05252;
+    color: #a32626;
+}
+
+#guess-options button:disabled {
+    cursor: not-allowed;
+    opacity: 0.85;
+}
+
+/* Feedback Message */
+#guess-feedback {
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 22px;
+    min-height: 25px;
+}
+
+/* Next Question Button */
+#guess-next {
+    margin-top: 20px;
+    padding: 13px 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: #e87524;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#guess-next:hover {
+    background-color: #c85e16;
+    transform: translateY(-2px);
+}
+
+#guess-next[hidden] {
+    display: none !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+
+    .guess-innovation {
+        padding: 50px 6%;
+    }
+
+    .guess-innovation h2 {
+        font-size: 28px;
+    }
+
+    .guess-container {
+        padding: 25px 18px;
+    }
+
+    #guess-question {
+        font-size: 19px;
+    }
+
+    #guess-options button {
+        font-size: 15px;
+    }
+}
