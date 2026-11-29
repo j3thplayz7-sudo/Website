@@ -1,0 +1,458 @@
+
+/* ================================= */
+/* INFRASTRUCTURE HERO */
+/* ================================= */
+
+.infrastructure-hero {
+    min-height: 65vh;
+    background: linear-gradient(135deg, #fff7ed, #ffdfbd);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 60px 5%;
+    gap: 40px;
+}
+
+.infrastructure-content {
+    flex: 1;
+}
+
+.infrastructure-label {
+    color: #d96b13;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.infrastructure-content h1 {
+    color: #e87518;
+    font-size: clamp(40px, 5vw, 70px);
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.infrastructure-subtitle {
+    color: #555;
+    font-size: 20px;
+}
+
+.infrastructure-image {
+    flex: 1;
+    max-width: 600px;
+}
+
+.infrastructure-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+
+/* ================================= */
+/* INFRASTRUCTURE MINI QUIZ */
+/* ================================= */
+
+.infrastructure-quiz {
+    background-color: #fffaf4;
+    padding: 65px 7%;
+    text-align: center;
+}
+
+.infrastructure-quiz h2,
+.city-section h2 {
+    color: #e87518;
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.quiz-intro {
+    color: #666;
+    font-size: 17px;
+    margin-bottom: 35px;
+}
+
+.infrastructure-questions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.infra-question {
+    background-color: white;
+    border: 2px solid #ffdfbd;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+}
+
+.infra-question h3 {
+    color: #d96b13;
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+.infra-answer {
+    display: block;
+    width: 100%;
+    background-color: #fff3e6;
+    color: #75421f;
+
+    border: 1px solid #f5c18f;
+    border-radius: 8px;
+
+    padding: 12px;
+    margin-bottom: 10px;
+
+    text-align: left;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.infra-answer:hover:not(:disabled) {
+    background-color: #ffdfbd;
+}
+
+.infra-answer:disabled {
+    cursor: default;
+    opacity: 0.85;
+}
+
+.infra-answer.correct {
+    background-color: #d9f5df;
+    border-color: #399b54;
+    color: #205e32;
+}
+
+.infra-answer.wrong {
+    background-color: #ffe0dc;
+    border-color: #d9534f;
+    color: #922b27;
+}
+
+.infra-feedback {
+    min-height: 20px;
+    color: #d96b13;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.infra-score {
+    margin-top: 30px;
+    color: #d96b13;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+
+/* ================================= */
+/* INTERACTIVE CITY */
+/* ================================= */
+
+.city-section {
+    background-color: #fff7ed;
+    padding: 65px 5%;
+    text-align: center;
+}
+
+.city-description {
+    color: #666;
+    font-size: 17px;
+    margin-bottom: 35px;
+}
+
+.city-scene {
+    max-width: 1050px;
+    height: 480px;
+    margin: auto;
+
+    border: 3px solid #f58220;
+    border-radius: 20px;
+    overflow: hidden;
+
+    position: relative;
+    background-color: #bde7f7;
+}
+
+/* Sky */
+
+.city-sky {
+    height: 65%;
+    background: linear-gradient(#9bdaf2, #e3f7ff);
+    position: relative;
+    overflow: hidden;
+}
+
+.city-sun {
+    position: absolute;
+    top: 20px;
+    right: 70px;
+    font-size: 48px;
+}
+
+.city-cloud {
+    position: absolute;
+    font-size: 35px;
+}
+
+.cloud-one {
+    top: 45px;
+    left: 18%;
+}
+
+.cloud-two {
+    top: 90px;
+    right: 25%;
+}
+
+
+/* City Skyline */
+
+.city-buildings {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    right: 5%;
+
+    height: 190px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.city-building {
+    width: 16%;
+    background: #f5a45c;
+    border: 3px solid #d96b13;
+    border-bottom: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #fff7ed;
+    font-size: 35px;
+
+    box-shadow: inset 0 0 15px rgba(255,255,255,0.3);
+}
+
+.building-one {
+    height: 100px;
+}
+
+.building-two {
+    height: 150px;
+    background: #f9bf78;
+}
+
+.building-three {
+    height: 180px;
+    background: #e87518;
+}
+
+.building-four {
+    height: 130px;
+    background: #f9bf78;
+}
+
+.building-five {
+    height: 110px;
+}
+
+
+/* Ground */
+
+.city-ground {
+    height: 35%;
+    background: linear-gradient(#8fcf73, #64aa52);
+    position: relative;
+}
+
+.city-road {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+
+    background: #555;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 30px;
+
+    border-top: 5px solid #777;
+}
+
+.city-road::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 35px;
+    border-top: 3px dashed white;
+}
+
+
+/* Clickable City Icons */
+
+.city-item {
+    position: absolute;
+    z-index: 2;
+
+    background: #ffffff;
+    border: 3px solid #f58220;
+    border-radius: 15px;
+
+    width: 65px;
+    height: 65px;
+
+    font-size: 32px;
+    cursor: pointer;
+
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+    transition: 0.25s;
+}
+
+.city-item:hover {
+    transform: scale(1.15);
+    background: #ffe4c9;
+}
+
+.city-item.selected {
+    background: #f58220;
+    border-color: white;
+    box-shadow: 0 0 0 4px rgba(245,130,32,0.3);
+}
+
+.house-item {
+    left: 8%;
+    top: 5%;
+}
+
+.building-item {
+    left: 27%;
+    top: -5%;
+}
+
+.road-item {
+    left: 40%;
+    top: 15%;
+}
+
+.power-item {
+    right: 27%;
+    top: -5%;
+}
+
+.port-item {
+    right: 8%;
+    top: 10%;
+}
+
+.airport-item {
+    right: 45%;
+    top: 15%;
+}
+
+
+/* City Information Panel */
+
+.city-info {
+    max-width: 850px;
+    min-height: 155px;
+
+    margin: 30px auto 0;
+    padding: 30px;
+
+    background: white;
+    border: 2px solid #f58220;
+    border-radius: 15px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+
+    transition: 0.3s;
+}
+
+.city-info h3 {
+    color: #e87518;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.city-info p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* ================================= */
+/* RESPONSIVE DESIGN */
+/* ================================= */
+
+@media (max-width: 850px) {
+
+    .infrastructure-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .infrastructure-image {
+        width: 100%;
+    }
+
+    .infrastructure-questions {
+        grid-template-columns: 1fr;
+    }
+
+    .city-scene {
+        height: 400px;
+    }
+
+    .city-item {
+        width: 52px;
+        height: 52px;
+        font-size: 25px;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .infrastructure-quiz h2,
+    .city-section h2 {
+        font-size: 30px;
+    }
+
+    .city-scene {
+        height: 340px;
+    }
+
+    .city-buildings {
+        height: 130px;
+        gap: 5px;
+    }
+
+    .city-item {
+        width: 43px;
+        height: 43px;
+        font-size: 21px;
+    }
+
+    .city-info {
+        padding: 20px;
+    }
+
+}
