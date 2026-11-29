@@ -1244,31 +1244,37 @@ const buildings = {
     }
 };
 
+
 // Create City Map
 const gameMap = document.getElementById("game-map");
 
-const waterTiles = [56, 57, 58, 59, 60, 61, 62, 63];
+if (gameMap) {
 
-for (let i = 0; i < 64; i++) {
+    const waterTiles = [56, 57, 58, 59, 60, 61, 62, 63];
 
-    let tile = document.createElement("button");
+    for (let i = 0; i < 64; i++) {
 
-    tile.className = "tile";
-    tile.dataset.building = "";
-    tile.dataset.terrain = "grass";
+        let tile = document.createElement("button");
 
-    // Add water terrain
-    if (waterTiles.includes(i)) {
-        tile.classList.add("terrain-water");
-        tile.dataset.terrain = "water";
+        tile.className = "tile";
+        tile.dataset.building = "";
+        tile.dataset.terrain = "grass";
+
+        // Add water terrain
+        if (waterTiles.includes(i)) {
+            tile.classList.add("terrain-water");
+            tile.dataset.terrain = "water";
+        }
+
+        tile.onclick = function () {
+            placeBuilding(tile);
+        };
+
+        gameMap.appendChild(tile);
     }
 
-    tile.onclick = function () {
-        placeBuilding(tile);
-    };
-
-    gameMap.appendChild(tile);
 }
+
 
 function selectBuilding(building) {
 
@@ -1546,3 +1552,253 @@ function checkMission() {
     }
 }
 
+
+
+// =============================
+// GUESS THE INNOVATION
+// =============================
+
+const innovationQuestions = [
+
+    {
+        image: "🤖",
+        question: "Which technology helps factories automate repetitive tasks?",
+        options: [
+            "A. Robotics",
+            "B. Solar Energy",
+            "C. Recycling"
+        ],
+        answer: 0,
+        feedback: "Robotics allows factories to automate tasks and improve production efficiency."
+    },
+
+    {
+        image: "☀️",
+        question: "Which technology helps factories generate clean electricity?",
+        options: [
+            "A. Coal Machinery",
+            "B. Solar Panels",
+            "C. Diesel Engines"
+        ],
+        answer: 1,
+        feedback: "Solar panels convert sunlight into renewable electricity."
+    },
+
+    {
+        image: "♻️",
+        question: "Which method helps factories reduce waste?",
+        options: [
+            "A. Producing more waste",
+            "B. Throwing away reusable materials",
+            "C. Recycling Materials"
+        ],
+        answer: 2,
+        feedback: "Recycling allows materials to be reused instead of becoming waste."
+    },
+
+    {
+        image: "🧠",
+        question: "Which technology allows machines to learn from information?",
+        options: [
+            "A. Artificial Intelligence",
+            "B. Traditional Machinery",
+            "C. Solar Panels"
+        ],
+        answer: 0,
+        feedback: "Artificial Intelligence helps machines analyse information and perform tasks intelligently."
+    },
+
+    {
+        image: "⚡",
+        question: "What can energy-efficient machinery help factories do?",
+        options: [
+            "A. Use more electricity",
+            "B. Reduce energy consumption",
+            "C. Increase pollution"
+        ],
+        answer: 1,
+        feedback: "Energy-efficient machinery uses less electricity while helping factories operate effectively."
+    }
+
+];
+
+let innovationCurrentQuestion = 0;
+let innovationScore = 0;
+let innovationAnswered = false;
+
+
+// Display a question
+function displayInnovationQuestion() {
+
+    const question = innovationQuestions[innovationCurrentQuestion];
+
+    document.getElementById("guess-progress").textContent =
+        `QUESTION ${innovationCurrentQuestion + 1} OF 5`;
+
+    document.getElementById("guess-image").textContent =
+        question.image;
+
+    document.getElementById("guess-question").textContent =
+        question.question;
+
+    const optionsContainer = document.getElementById("guess-options");
+
+    optionsContainer.innerHTML = "";
+
+    question.options.forEach((option, index) => {
+
+        const button = document.createElement("button");
+
+        button.textContent = option;
+
+        button.onclick = function () {
+            checkInnovationAnswer(index);
+        };
+
+        optionsContainer.appendChild(button);
+
+    });
+
+    document.getElementById("guess-feedback").textContent = "";
+
+    document.getElementById("guess-next").hidden = true;
+
+    innovationAnswered = false;
+
+}
+
+
+// Check the selected answer
+function checkInnovationAnswer(selectedAnswer) {
+
+    if (innovationAnswered) return;
+
+    innovationAnswered = true;
+
+    const question = innovationQuestions[innovationCurrentQuestion];
+
+    const buttons = document.querySelectorAll("#guess-options button");
+
+    buttons.forEach(button => {
+        button.disabled = true;
+    });
+
+    const feedback = document.getElementById("guess-feedback");
+
+    if (selectedAnswer === question.answer) {
+
+        innovationScore++;
+
+        feedback.textContent = "✓ Correct! " + question.feedback;
+
+        feedback.style.color = "#27632a";
+        feedback.style.backgroundColor = "#e5f5e5";
+
+    } else {
+
+        feedback.textContent = "✗ Not quite! " + question.feedback;
+
+        feedback.style.color = "#a34820";
+        feedback.style.backgroundColor = "#fff0e5";
+
+    }
+
+    feedback.style.padding = "15px";
+    feedback.style.borderRadius = "8px";
+
+    const nextButton = document.getElementById("guess-next");
+
+    nextButton.hidden = false;
+
+    nextButton.textContent =
+        innovationCurrentQuestion === 4
+            ? "View My Results →"
+            : "Next Question →";
+
+}
+
+
+// Move to the next question
+function nextInnovationQuestion() {
+
+    innovationCurrentQuestion++;
+
+    if (innovationCurrentQuestion < innovationQuestions.length) {
+
+        displayInnovationQuestion();
+
+    } else {
+
+        displayInnovationResults();
+
+    }
+
+}
+
+
+// Display final results
+function displayInnovationResults() {
+
+    document.getElementById("guess-progress").textContent =
+        "CHALLENGE COMPLETED";
+
+    document.getElementById("guess-image").textContent = "🏆";
+
+    document.getElementById("guess-question").textContent =
+        `You scored ${innovationScore}/5!`;
+
+    document.getElementById("guess-options").innerHTML = "";
+
+    let message;
+
+    if (innovationScore === 5) {
+        message = "Outstanding! You're an Innovation Expert!";
+    } else if (innovationScore >= 3) {
+        message = "Well done! You have a good understanding of modern industry!";
+    } else {
+        message = "Good effort! Keep exploring the technologies shaping our future!";
+    }
+
+    document.getElementById("guess-feedback").textContent = message;
+
+    const nextButton = document.getElementById("guess-next");
+
+    nextButton.textContent = "Play Again ↻";
+    nextButton.hidden = false;
+
+}
+
+
+// Restart the game
+function resetInnovationGame() {
+
+    innovationCurrentQuestion = 0;
+    innovationScore = 0;
+
+    displayInnovationQuestion();
+
+}
+
+
+// Connect the buttons and start the game
+const innovationNextButton = document.getElementById("guess-next");
+
+if (innovationNextButton) {
+
+    innovationNextButton.addEventListener("click", function () {
+
+        if (innovationCurrentQuestion >= innovationQuestions.length) {
+
+            resetInnovationGame();
+
+        } else {
+
+            nextInnovationQuestion();
+
+        }
+
+    });
+
+    displayInnovationQuestion();
+
+}

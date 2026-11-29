@@ -3053,3 +3053,128 @@ section img {
     background-color: #81d4fa;
     transform: none;
 }
+
+
+/* ============================= */
+/* GUESS THE INNOVATION */
+/* ============================= */
+
+.guess-innovation {
+    padding: 70px 8%;
+    text-align: center;
+    background-color: #fff8f0;
+}
+
+.guess-innovation h2 {
+    font-size: 36px;
+    color: #e87924;
+    margin-bottom: 15px;
+}
+
+.guess-subtitle {
+    max-width: 700px;
+    margin: 0 auto 35px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.guess-container {
+    max-width: 750px;
+    margin: auto;
+    padding: 35px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+#guess-progress {
+    color: #d96818;
+    font-weight: bold;
+}
+
+#guess-image {
+    font-size: 75px;
+    margin: 25px 0;
+}
+
+#guess-question {
+    font-size: 23px;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+#guess-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#guess-options button {
+    padding: 16px;
+    border: 2px solid #eee;
+    border-radius: 9px;
+    background: white;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#guess-options button:hover {
+    border-color: #e87924;
+    background-color: #fff5eb;
+}
+
+#guess-options button:disabled {
+    cursor: default;
+    opacity: 0.85;
+}
+
+#guess-feedback {
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+#guess-next {
+    margin-top: 20px;
+    padding: 14px 28px;
+    background-color: #e87924;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#guess-next:hover {
+    background-color: #c85e13;
+}
+
+#guess-next[hidden] {
+    display: none;
+}
+
+/* Mobile Layout */
+@media (max-width: 600px) {
+    .guess-innovation {
+        padding: 50px 5%;
+    }
+
+    .guess-innovation h2 {
+        font-size: 29px;
+    }
+
+    .guess-container {
+        padding: 22px 16px;
+    }
+
+    #guess-question {
+        font-size: 20px;
+    }
+
+    #guess-options button {
+        font-size: 14px;
+    }
+}
+
