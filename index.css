@@ -1,0 +1,200 @@
+
+/* ================================= */
+/* HOMEPAGE - GENERAL STYLING */
+/* ================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff7ed;
+    color: #333;
+}
+
+
+/* ================================= */
+/* HOMEPAGE HERO SECTION */
+/* ================================= */
+
+.hero {
+    min-height: 85vh;
+    background: linear-gradient(135deg, #fff7ed, #ffdfbd);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 60px 5%;
+    gap: 40px;
+}
+
+/* Left Side - Text */
+
+.hero-content {
+    flex: 1;
+    max-width: 650px;
+}
+
+.goal-label {
+    color: #d96b13;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+/* Main Heading */
+
+.hero h1 {
+    color: #e87518;
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+/* Description */
+
+.hero-description {
+    color: #555;
+    font-size: 19px;
+    margin-bottom: 35px;
+}
+
+/* Hero Button */
+
+.hero-button {
+    display: inline-block;
+    background-color: #f58220;
+    color: white;
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    padding: 16px 25px;
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background-color: #d96b13;
+    transform: translateY(-3px);
+}
+
+/* Right Side - Image */
+
+.hero-image {
+    flex: 1;
+    max-width: 650px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ================================= */
+/* UN SDG INTRODUCTION SECTION */
+/* ================================= */
+
+.sdg-introduction {
+    width: 90%;
+    max-width: 1100px;
+    margin: 70px auto;
+    padding: 30px 45px;
+}
+
+/* Individual Information Sections */
+
+.sdg-info-section {
+    padding: 35px 10px;
+    text-align: left;
+}
+
+.sdg-info-section h2 {
+    color: #e87518;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.sdg-info-section p {
+    color: #70421f;
+    font-size: 17px;
+    line-height: 1.9;
+    margin: 0;
+}
+
+/* Horizontal Dividers */
+
+.sdg-divider {
+    border: none;
+    height: 2px;
+
+    background: linear-gradient(
+        to right,
+        #f28c28,
+        #ffdfc1,
+        transparent
+    );
+
+    margin: 5px 10px;
+}
+
+
+/* ================================= */
+/* RESPONSIVE DESIGN */
+/* ================================= */
+
+@media (max-width: 850px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .hero-image img {
+        height: auto;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .sdg-introduction {
+        margin: 40px auto;
+        padding: 15px 10px;
+    }
+
+    .sdg-info-section {
+        padding: 25px 5px;
+    }
+
+    .sdg-info-section h2 {
+        font-size: 23px;
+    }
+
+    .sdg-info-section p {
+        font-size: 15px;
+    }
+
+}
