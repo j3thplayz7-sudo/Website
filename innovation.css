@@ -1,0 +1,753 @@
+
+/* ================================= */
+/* INNOVATION HERO SECTION */
+/* ================================= */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff7ed;
+    color: #333;
+}
+
+.innovation-hero {
+    min-height: 65vh;
+    background: linear-gradient(135deg, #fff7ed, #ffdfbd);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 60px 5%;
+    gap: 40px;
+}
+
+.innovation-content {
+    flex: 1;
+}
+
+.innovation-label {
+    color: #d96b13;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.innovation-content h1 {
+    color: #e87518;
+    font-size: clamp(40px, 5vw, 70px);
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.innovation-description {
+    color: #555;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.innovation-image {
+    flex: 1;
+    max-width: 550px;
+}
+
+.innovation-image svg {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(245, 130, 32, 0.2));
+}
+
+
+/* ================================= */
+/* QUIZ BUTTON */
+/* ================================= */
+
+.quiz-button,
+#next-button {
+    background-color: #f58220;
+    color: white;
+    border: none;
+    border-radius: 30px;
+
+    padding: 16px 30px;
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.quiz-button:hover,
+#next-button:hover {
+    background-color: #d96b13;
+    transform: translateY(-3px);
+}
+
+
+/* ================================= */
+/* INNOVATION QUIZ */
+/* ================================= */
+
+.quiz-section {
+    display: none;
+    background-color: #fff7ed;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.quiz-section h2 {
+    color: #e87518;
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.quiz-section > p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.quiz-box {
+    background-color: white;
+    max-width: 700px;
+    margin: auto;
+
+    padding: 35px;
+    border-radius: 18px;
+    border: 2px solid #f58220;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.quiz-box h3 {
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+#answer-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.answer-button {
+    background-color: #fff0df;
+    color: #75421f;
+
+    border: 2px solid #f58220;
+    border-radius: 10px;
+
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.answer-button:hover:not(:disabled) {
+    background-color: #ffdbb5;
+}
+
+.answer-button:disabled {
+    cursor: default;
+    opacity: 0.85;
+}
+
+.answer-button.correct {
+    background-color: #d9f5df;
+    border-color: #399b54;
+    color: #205e32;
+}
+
+.answer-button.wrong {
+    background-color: #ffe0dc;
+    border-color: #d9534f;
+    color: #922b27;
+}
+
+#quiz-feedback {
+    font-weight: bold;
+    margin: 20px 0;
+    min-height: 24px;
+    color: #d96b13;
+}
+
+#next-button {
+    margin-top: 10px;
+}
+
+
+/* ================================= */
+/* DID YOU KNOW SECTION */
+/* ================================= */
+
+.facts-section {
+    background-color: #fffaf4;
+    padding: 65px 4%;
+    text-align: center;
+}
+
+.facts-section h2 {
+    color: #e87518;
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.facts-subtitle {
+    color: #666;
+    font-size: 17px;
+    margin-bottom: 40px;
+}
+
+.facts-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.facts-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    width: 100%;
+    max-width: 1050px;
+}
+
+
+/* Individual Fact Cards */
+
+.fact-card {
+    min-height: 300px;
+    aspect-ratio: 1 / 1;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #ffe7ce
+    );
+
+    border: 2px solid #f58220;
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 22px;
+
+    box-shadow: 0 8px 18px rgba(245, 130, 32, 0.12);
+
+    animation: cardAppear 0.4s ease;
+}
+
+.fact-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.fact-card h3 {
+    color: #d96b13;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.fact-card p {
+    color: #444;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* Carousel Arrows */
+
+.arrow-button {
+    flex-shrink: 0;
+    background-color: #f58220;
+    color: white;
+
+    border: none;
+    border-radius: 50%;
+
+    width: 55px;
+    height: 55px;
+
+    font-size: 25px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.arrow-button:hover {
+    background-color: #d96b13;
+    transform: scale(1.1);
+}
+
+.facts-instruction {
+    color: #888;
+    font-size: 14px;
+    margin-top: 25px;
+}
+
+
+/* Fact Card Animation */
+
+@keyframes cardAppear {
+    from {
+        opacity: 0.4;
+        transform: translateX(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* ================================= */
+/* CITY BUILDER GAME */
+/* ================================= */
+
+.city-builder {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8e8;
+    color: #2e4625;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 20px;
+    margin: 30px auto;
+}
+
+
+/* Game Header */
+
+.city-builder h1 {
+    color: #27632a;
+    margin-bottom: 10px;
+}
+
+.city-builder h2 {
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+.city-builder h3 {
+    color: #27632a;
+}
+
+
+/* Game Statistics */
+
+.city-builder .stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background-color: white;
+    border-radius: 15px;
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 850px;
+}
+
+.city-builder .stat-box {
+    background-color: #e8f5e9;
+    padding: 15px;
+    border-radius: 12px;
+    min-width: 120px;
+}
+
+.city-builder .stat-box h3 {
+    font-size: 15px;
+}
+
+.city-builder .stat-box h2 {
+    color: #2e7d32;
+}
+
+
+/* Happiness Bar */
+
+.city-builder .happiness-section {
+    max-width: 500px;
+    margin: 25px auto;
+}
+
+.city-builder .progress-bar {
+    width: 100%;
+    height: 25px;
+    background-color: #dddddd;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.city-builder #happiness-bar {
+    width: 50%;
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.3s;
+}
+
+
+/* Mission */
+
+.city-builder .mission {
+    background-color: #fff3cd;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.city-builder .mission p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* Building Selection */
+
+.city-builder .buildings {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px;
+}
+
+
+/* Game Buttons */
+
+.city-builder button {
+    background-color: #ffcc66;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.city-builder button:hover {
+    background-color: orange;
+    transform: translateY(-2px);
+}
+
+.city-builder button.active {
+    background-color: #4caf50;
+    color: white;
+}
+
+
+/* Game Map */
+
+.city-builder #game-map {
+    display: grid;
+    grid-template-columns: repeat(8, 45px);
+    gap: 3px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+
+/* Individual Tiles */
+
+.city-builder .tile {
+    width: 45px;
+    height: 45px;
+    background-color: #a8d879;
+    border: 1px solid #6aa84f;
+    border-radius: 6px;
+    font-size: 25px;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+
+/* Empty Tile Hover */
+
+.city-builder .tile:not([data-building]):hover {
+    transform: scale(1.05);
+    background-color: #c9edb2;
+}
+
+
+/* Placed Building Tiles */
+
+.city-builder .tile[data-building]:not([data-building=""]) {
+    background-color: #e8f5e9;
+    border: 2px solid #66a66b;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+/* Building Hover */
+
+.city-builder .tile[data-building]:not([data-building=""]):hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Game Messages */
+
+.city-builder #message {
+    font-size: 16px;
+    font-weight: bold;
+    color: #27632a;
+    background-color: #e8f5e9;
+    padding: 12px 18px;
+    margin: 15px auto;
+    max-width: 500px;
+    border-radius: 10px;
+    border: 1px solid #c8e6c9;
+    text-align: center;
+    line-height: 1.5;
+}
+
+
+/* Building Categories */
+
+.city-builder .building-category {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: rgb(192, 219, 195);
+    padding: 18px;
+    margin: 10px auto;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+
+/* Category Headings */
+
+.city-builder .building-category h3 {
+    width: 100%;
+    margin: 0 0 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e8f5e9;
+    color: #408f44;
+}
+
+
+/* Category Buttons */
+
+.city-builder .building-category button {
+    min-width: 140px;
+}
+
+
+/* Selected Building Button */
+
+.city-builder .building-category button.active {
+    background-color: #2e7d32;
+    color: white;
+    border: 2px solid #1b5e20;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+
+/* Selected Button Hover */
+
+.city-builder .building-category button.active:hover {
+    background-color: #256b29;
+}
+
+
+/* Building Information Panel */
+
+.city-builder #building-info {
+    background: linear-gradient(135deg, #ffffff, #f1f8e9);
+    max-width: 420px;
+    margin: 25px auto;
+    padding: 24px;
+    border-radius: 16px;
+    border-left: 6px solid #4caf50;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+
+/* Building Name */
+
+.city-builder #building-info h3 {
+    color: #2e7d32;
+    margin-bottom: 15px;
+    font-size: 22px;
+    text-transform: capitalize;
+}
+
+
+/* Building Statistics */
+
+.city-builder #building-info p {
+    margin: 10px 0;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.5;
+}
+
+
+/* Building Description */
+
+.city-builder .building-description {
+    color: #555;
+    line-height: 1.6;
+    font-size: 14px;
+    margin: 12px 0;
+}
+
+
+/* Unaffordable Buildings */
+
+.city-builder .building-category button.unaffordable {
+    opacity: 0.4;
+    filter: grayscale(80%);
+    border: 2px solid #d9534f;
+}
+
+.city-builder .building-category button.unaffordable:hover {
+    transform: none;
+    cursor: not-allowed;
+}
+
+
+/* City Terrain */
+
+/* Grass */
+
+.city-builder .tile {
+    background-color: #b7e49a;
+    border: 1px solid #82bd63;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Grass Hover */
+
+.city-builder .tile:hover {
+    background-color: #c9edb2;
+    transform: scale(1.03);
+}
+
+/* Water */
+
+.city-builder .tile.terrain-water {
+    background-color: #64b5e8;
+    border: 1px solid #388dc5;
+}
+
+/* Water Hover */
+
+.city-builder .tile.terrain-water:hover {
+    background-color: #81d4fa;
+    transform: none;
+}
+
+
+/* ================================= */
+/* RESPONSIVE DESIGN */
+/* ================================= */
+
+@media (max-width: 900px) {
+
+    .innovation-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .innovation-image {
+        width: 100%;
+    }
+
+    .facts-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fact-card:last-child {
+        display: none;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    #answer-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .facts-container {
+        grid-template-columns: 1fr;
+    }
+
+    .fact-card:not(:first-child) {
+        display: none;
+    }
+
+    .facts-carousel {
+        gap: 8px;
+    }
+
+    .arrow-button {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .fact-card {
+        min-height: 300px;
+    }
+
+}
+
+
+/* ================================= */
+/* RESPONSIVE CITY BUILDER */
+/* ================================= */
+
+@media (max-width: 650px) {
+
+    .city-builder {
+        padding: 20px 8px;
+    }
+
+    .city-builder #game-map {
+        grid-template-columns: repeat(8, 10vw);
+        gap: 2px;
+    }
+
+    .city-builder .tile {
+        width: 10vw;
+        height: 10vw;
+        font-size: 20px;
+    }
+
+    .city-builder .stats {
+        gap: 10px;
+        padding: 8px;
+    }
+
+    .city-builder .stat-box {
+        min-width: 90px;
+        padding: 10px;
+    }
+
+    .city-builder .buildings {
+        margin: 10px 0;
+    }
+
+    .city-builder button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+}
